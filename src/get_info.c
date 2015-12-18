@@ -18,11 +18,11 @@ int main(int argc, char *argv[]){
 	exit(EXIT_FAILURE);
 	}
     	
-    printf("File stat ino_t :%ld\n", (ino_t)filestat.st_ino);
-    printf("File stat mode_t :%x\n", (mode_t)filestat.st_mode);
+    printf("File stat ino_t :%ld\n", (long)filestat.st_ino);
+    printf("File stat mode_t :%lo (octal)\n", (unsigned long)filestat.st_mode);
 
-    printf("File type:		\n");
-    /*switch (filestat.st_mode & S_IFMT){
+    printf("File type:		");
+    switch (filestat.st_mode & S_IFMT){
 	case S_IFDIR:
 		printf("Directory \n");
 		break;
@@ -35,7 +35,7 @@ int main(int argc, char *argv[]){
 	case S_IFCHR:
 		printf("Character Device\n");
 		break;
-	case S_IFFIFO:
+	case S_IFIFO:
 		printf("FIFO/Pipe\n");
 		break;
 	case S_IFLNK:
@@ -48,8 +48,8 @@ int main(int argc, char *argv[]){
 		printf("Unknown\n");
 		break;
 
-	}*/
-    if(S_ISREG(filestat.st_mode))
+	}
+    /*if(S_ISREG(filestat.st_mode))
         printf("Regular File\n");
     else if(S_ISDIR(filestat.st_mode))
         printf("Directory \n");
@@ -64,7 +64,19 @@ int main(int argc, char *argv[]){
     else if(S_ISLNK(filestat.st_mode))
         printf("Symbolic Link\n");		
     else
-	printf("Unknown\n");
+	printf("Unknown\n");*/
+    printf("Link Count = %ld\n",(long)filestat.st_nlink);
+    printf("Ownership:    UID=%ld    GID=%ld\n",(long)filestat.st_uid,(long)filestat.st_gid);
+    printf("Preferred I/O block size: %ld bytes\n",(long)filestat.st_blksize);
+    printf("File Size:     %lld\n",(long long)filestat.st_size);
+    printf("Blocks allocated:     %lld\n",(long long)filestat.st_blocks);
+
+    //File Time Stamp
+    printf("Last status change: %s\n", ctime(&filestat.st_ctime));
+    printf("Last file access:   %s\n", ctime(&filestat.st_atime));
+    printf("Last file modification: %s\n", ctime(&filestat.st_mtime));
+ 
+
     return 0;
 }
 	
