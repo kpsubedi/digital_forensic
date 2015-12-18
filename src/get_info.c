@@ -17,8 +17,20 @@ int main(int argc, char *argv[]){
 	perror("Unable to get status\n");
 	exit(EXIT_FAILURE);
 	}
+    	
+    printf("File stat ino_t :%ld\n", (ino_t)filestat.st_ino);
+    printf("File stat mode_t :%x\n", (mode_t)filestat.st_mode);
 
     printf("File type:		\n");
+    switch (filestat.st_mode & S_IFMT){
+	case S_IFDIR:
+		printf("Directory \n");
+		break;
+	default:
+		printf("Unknown\n");
+		break;
+
+	}
 
     return 0;
 }
