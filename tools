@@ -9,3 +9,14 @@ Network Forensic Tools
 7. SQUID PROXY
 8. YARA 
 
+
+File System Forensic
+=====================
+1. Sleuthkit 
+2. MAC Robber
+
+
+
+Memory Forensic
+===============
+1. Volatility 
