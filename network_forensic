@@ -17,6 +17,9 @@ Lecture1
    
    -- IP, TCP, UDP 
       -- TCP Three-way connection 
+      -- DNS (TCP is used when the response data size exceeds 512 bytes, or for tasks such as zone transfers)
+      
+      
       
       
       
