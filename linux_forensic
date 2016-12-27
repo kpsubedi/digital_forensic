@@ -35,4 +35,46 @@ Unset SUID bit
 
 $ chmod u-s a.out
 
+Find SUID file
+
+null@null-VirtualBox:~$ find / -perm -4000 -user root -type f -print
+
+
+SGID
+****
+Process's effective group ID is changed to the group-owner of the file, and a user is 
+granted access based on permissions granted to that group.
+
+null@null-VirtualBox:~/test$ mkdir sample1
+null@null-VirtualBox:~/test$ ls -ltr
+total 4
+drwxrwxr-x 2 null null 4096 Dec 27 16:13 sample1
+null@null-VirtualBox:~/test$ sudo groupadd it
+[sudo] password for null: 
+null@null-VirtualBox:~/test$ chown null:it sample1/
+chown: changing ownership of 'sample1/': Operation not permitted
+null@null-VirtualBox:~/test$ sudo chown null:it sample1/
+null@null-VirtualBox:~/test$ ls -ltr
+total 4
+drwxrwxr-x 2 null it 4096 Dec 27 16:13 sample1
+
+Create three users with two has group as "it" and one without 
+
+
+null@null-VirtualBox:~/test$ sudo usermod -G it user1
+null@null-VirtualBox:~/test$ sudo usermod -G it user2
+
+when user1 creates a file in sample1, the newly created file has user1 as owner and group. 
+If we set sgid bit the original group owner is preserved.
+
+null@null-VirtualBox:~/test$ ls -ltr
+total 4
+drwxrwxr-x 2 null it 4096 Dec 27 16:13 sample1
+null@null-VirtualBox:~/test$ sudo chmod g+s sample1
+null@null-VirtualBox:~/test$ ls -ltr
+total 4
+drwxrwsr-x 2 null it 4096 Dec 27 16:13 sample1
+null@null-VirtualBox:~/test$
+
+
 
