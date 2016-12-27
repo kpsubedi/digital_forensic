@@ -95,6 +95,9 @@ File System
 #cat /proc/cmdline
 #cat /proc/kallsyms
 
+#cat /proc/kcore | strings
+
+#cat /proc/partitions
 
 
 
