@@ -1,3 +1,21 @@
+Toolchains
+==========
+-- includes a compiler, a linker, assembler as well as debugger
+Example
+-------
+The GNU Assembler
+*****************
+-- Responsible for turning compiled C code 
+$gcc -S hello.c
+
+$as -o hello.o hello.s
+
+$ld 
+
+$gdb
+
+
+
 
 Network Forensic Tools
 ======================
