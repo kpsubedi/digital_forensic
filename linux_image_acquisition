@@ -1,0 +1,7 @@
+
+Acquire entire hard drive or just get one partition
+
+Get data from usb stick
+
+#dd if=/dev/sdb1 of=usb_stick.dd 
+
