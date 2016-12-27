@@ -1,0 +1,7 @@
+Linux Security Model
+====================
+Accounts: superuser(root), system accounts( mail, apache, bin, uucp etc), and normal user accounts
+
+
+#ls -l /etc/passwd /etc/shadow
+
