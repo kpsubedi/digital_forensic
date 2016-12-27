@@ -15,4 +15,24 @@ In addition to read, write, and execute permissions. *NIX also has
 2. set GID i.e SGID
 3. Sticky BIT 
 
-#ls -l /
+SUID
+****
+When SUID permission is set on an executable file, a process that runs this file is granted access based 
+on the owner of the file (usally root), instead of the user who is executing. 
+null@null-VirtualBox:~$ ls -l /usr/bin/passwd
+-rwsr-xr-x 1 root root 54256 Mar 29  2016 /usr/bin/passwd
+
+Set SUID bit
+
+null@null-VirtualBox:~$ ls -l a.out
+-rwxrwxr-x 1 null null 8600 Dec 27 16:00 a.out
+null@null-VirtualBox:~$ chmod u+s a.out 
+null@null-VirtualBox:~$ ls -l a.out 
+-rwsrwxr-x 1 null null 8600 Dec 27 16:00 a.out
+null@null-VirtualBox:~$ 
+
+Unset SUID bit
+
+$ chmod u-s a.out
+
+
