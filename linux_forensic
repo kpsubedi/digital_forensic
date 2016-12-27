@@ -78,3 +78,26 @@ null@null-VirtualBox:~/test$
 
 
 
+
+File System
+============
+/proc
+
+#cat /proc/cpuinfo
+
+#cat /proc/diskstates
+
+#cat /proc/mounts
+
+#cat /proc/modules
+#cat /proc/filesystems
+#cat /proc/driver/rtc
+#cat /proc/cmdline
+#cat /proc/kallsyms
+
+
+
+
+
+
+
