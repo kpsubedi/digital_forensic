@@ -1,0 +1,23 @@
+
+Network Forensic
+================
+
+1. Capture (packets are captured)
+2. Identify (used certain filtering criterion such as IPs, MACs, Time etc)
+3. Analyze 
+
+
+Lecture1
+========
+1. Review fundamentals
+   -- IP Address 
+   -- Ports
+   -- OSI Reference Model
+   -- TCP/IP 
+   
+   -- IP, TCP, UDP 
+      -- TCP Three-way connection 
+      
+      
+      
+      
