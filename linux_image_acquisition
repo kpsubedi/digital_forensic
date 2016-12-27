@@ -5,3 +5,50 @@ Get data from usb stick
 
 #dd if=/dev/sdb1 of=usb_stick.dd 
 
+Syntax of dd
+------------
+dd if=<source_file> of=<destination_file> [options]
+
+if=<source_file> : This is a source file from where we want to copy data and "if" stands for "input file".
+of=<destination_file> : This is a destination file where we want to write data and "of" stands for "output file".
+
+[options] : size of block, how fast, what format etc.
+
+
+
+Use Cases:
+
+1. Hard Drive Clone
+
+#dd if=/dev/sda of=/dev/sdb
+
+2. Backup of partition
+#dd if=/deb/sdb2 of=~/hd_backup.img
+
+3. Restore from backup image
+#dd if=~/hd_backup.img of=/dev/sda4
+
+4. Alternative to cp
+#dd if=/etc/passwd of=/root/passwd_backup
+
+5. Wipe or Delete content
+#dd if=/dev/zero of=/dev/sdb
+
+6. Wipe out with randomized data
+#dd if=/dev/random of=/dev/sda
+
+for i in {1..20};do dd if=/dev/random of=/dev/sda; done
+
+7. Create virtual swap space in linux
+
+#dd if=/dev/zero of=/swapfile bs=1024 count=300
+
+bs=1024 === 1 KB
+Default block size is 512 bytes. 
+
+8. Create ISO files
+
+#dd if=/dev/sr0 of=/home/$USER/cd_file.iso bs=2048 conv=sync
+
+
+
