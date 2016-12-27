@@ -5,3 +5,14 @@ Accounts: superuser(root), system accounts( mail, apache, bin, uucp etc), and no
 
 #ls -l /etc/passwd /etc/shadow
 
+#chmod 644 sample.txt
+#chmod u+rw,g+r,o+r sample.txt
+
+#chown test.test sample.txt
+
+In addition to read, write, and execute permissions. *NIX also has 
+1. set UID i.e. SUID
+2. set GID i.e SGID
+3. Sticky BIT 
+
+#ls -l /
