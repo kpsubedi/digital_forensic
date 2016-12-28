@@ -42,4 +42,18 @@ Memory Forensic
 
 Display All the running process in the image of the operating system.
 1. # python vol.py -f os_image.vmem pslist
+2. # python vol.py -f os_image.vmem | grep -i svchost
+3. # python vol.py -f os_image.vmem pslist -p <pid> 
+4. # python vol.py -f os_image.vmem dlllist -p <pid> : List the loaded modules including the executable. This
+list is extracted from Process Environment Block (PEB) 
+
+5. # python vol.py -f os_image.vmem ldrmodules -p <pid> : l
+
+
+
+
+
+
+
+
 
