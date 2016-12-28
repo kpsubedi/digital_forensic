@@ -1,0 +1,13 @@
+Python
+======
+-- during software development, you will encounter data types you are unfamilier with or
+what methods exist to interact with the object. The following three functions help to solve those 
+issues:
+1. type() function
+2. dir() function
+3. help() function
+
+type()
+******
+when supply with an object, will return its __name__ attribute, thus providing the type identifying information about
+the object. 
