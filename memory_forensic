@@ -1,2 +1,24 @@
 Memory Forensic
 ===============
+
+Tools
+******
+null@null-VirtualBox:~/test$ apt-cache search volatility
+forensics-all - Debian Forensics Environment - essential components (metapackage)
+lime-forensics-dkms - kernel module to memory dump (DKMS)
+r-cran-fgarch - GNU R package for financial engineering -- fGarch
+volatility - advanced memory forensics framework
+volatility-tools - generate profiles to Volatility Framework
+
+Installation
+------------
+1. Using Package Manager 
+null@null-VirtualBox:~/test$ sudo apt-get install volatility
+[sudo] password for null: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+volatility is already the newest version (2.5-1).
+0 upgraded, 0 newly installed, 0 to remove and 187 not upgraded.
+
+2. Using Source Code
