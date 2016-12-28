@@ -38,3 +38,8 @@ File System Forensic
 Memory Forensic
 ===============
 1. Volatility 
+
+
+Display All the running process in the image of the operating system.
+1. # python vol.py -f os_image.vmem pslist
+
