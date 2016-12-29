@@ -51,7 +51,18 @@ Commands
 
 2. MAC Robber
 
+***************
+afflib-dbg - Advanced Forensics Format Library (debug version)
+afflib-tools - Advanced Forensics Format Library (utilities)
+dc3dd - patched version of GNU dd with forensic features
+dcfldd - enhanced version of dd for forensics and security
+volatility - advanced memory forensics framework
+volatility-tools - generate profiles to Volatility Framework
+wipe - secure file deletion
+xmount - tool to crossmount between multiple input and output harddisk images
 
+
+***************
 
 Memory Forensic
 ===============
