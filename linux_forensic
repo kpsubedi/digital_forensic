@@ -319,12 +319,85 @@ total 0
 eric@null-VirtualBox:/data/sales$ rm bob1
 rm: cannot remove 'bob1': Operation not permitted
 eric@null-VirtualBox:/data/sales$ 
-
-
-
 ######################
+null@null-VirtualBox:~$ find . -type f -exec file {} \;
+null@null-VirtualBox:~$ find . -type f -exec sha1sum {} \;
 
+Create a selected key word in searchlist.txt file and search in a.out binary file.
 
+null@null-VirtualBox:~$ grep -abif searchlist.txt a.out
+
+null@null-VirtualBox:~$ sudo apt-get install hdparm
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+hdparm is already the newest version (9.48+ds-1).
+hdparm set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 187 not upgraded.
+null@null-VirtualBox:~$ hdparm
+Command 'hdparm' is available in '/sbin/hdparm'
+The command could not be located because '/sbin' is not included in the PATH environment variable.
+This is most likely caused by the lack of administrative privileges associated with your user account.
+hdparm: command not found
+null@null-VirtualBox:~$ sudo hdparm /dev/sda
+
+/dev/sda:
+ multcount     = 128 (on)
+ IO_support    =  1 (32-bit)
+ readonly      =  0 (off)
+ readahead     = 256 (on)
+ geometry      = 2610/255/63, sectors = 41942239, start = 0
+null@null-VirtualBox:~$ sudo hdparm -d1 /dev/sda
+
+/dev/sda:
+ setting using_dma to 1 (on)
+ HDIO_SET_DMA failed: Inappropriate ioctl for device
+ HDIO_GET_DMA failed: Inappropriate ioctl for device
+null@null-VirtualBox:~$ sudo hdparm -I /dev/sda
+
+/dev/sda:
+
+ATA device, with non-removable media
+	Model Number:       VBOX HARDDISK                           
+	Serial Number:      VB006050f3-052c9ed9 
+	Firmware Revision:  1.0     
+Standards:
+	Used: ATA/ATAPI-6 published, ANSI INCITS 361-2002 
+	Supported: 6 5 4 
+Configuration:
+	Logical		max	current
+	cylinders	16383	16383
+	heads		16	16
+	sectors/track	63	63
+	--
+	CHS current addressable sectors:   16514064
+	LBA    user addressable sectors:   41942239
+	LBA48  user addressable sectors:   41942239
+	Logical/Physical Sector size:           512 bytes
+	device size with M = 1024*1024:       20479 MBytes
+	device size with M = 1000*1000:       21474 MBytes (21 GB)
+	cache/buffer size  = 256 KBytes (type=DualPortCache)
+Capabilities:
+	LBA, IORDY(cannot be disabled)
+	Queue depth: 32
+	Standby timer values: spec'd by Vendor, no device specific minimum
+	R/W multiple sector transfer: Max = 128	Current = 128
+	DMA: mdma0 mdma1 mdma2 udma0 udma1 udma2 udma3 udma4 udma5 *udma6 
+	     Cycle time: min=120ns recommended=120ns
+	PIO: pio0 pio1 pio2 pio3 pio4 
+	     Cycle time: no flow control=120ns  IORDY flow control=120ns
+Commands/features:
+	Enabled	Supported:
+	   *	Power Management feature set
+	   *	Write cache
+	   *	Look-ahead
+	   *	48-bit Address feature set
+	   *	Mandatory FLUSH_CACHE
+	   *	FLUSH_CACHE_EXT
+	   *	Gen2 signaling speed (3.0Gb/s)
+	   *	Native Command Queueing (NCQ)
+Checksum: correct
+null@null-VirtualBox:~$ 
 
 
 
