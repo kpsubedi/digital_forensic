@@ -15,4 +15,21 @@ If we need to coordiate with other processes it needs to be a system call.
 If it is only going to affect current process it doesnot need to be
 a system call.
 
+For Example
+-----------
+String concatination doesnot need to be system call. There is no other processes in the system care you
+are concatinating strings together. It is done using library call.
+
+If we read data from file we need to coordinate to process potentially 
+writing data to the same file. In particular, We want to ensure automacity of system call.
+There is a porcess attempting to write to the file and you are trying to read the same part 
+of the same file. The promise the system has to make is either you see before the file
+write started or you see after the write completed. You donot see the file half written.
+
+
+
+
+
+
+
 
