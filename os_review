@@ -1,0 +1,18 @@
+
+Difference between library call and system call
+
+Library Call:
+------------
+If possible make a library call, it is just a cost of calling subroutine 
+
+System Call:
+------------
+Trap into the operating system 
+10 times more expensive 
+
+Does this things potentially affect any other processes?
+If we need to coordiate with other processes it needs to be a system call.
+If it is only going to affect current process it doesnot need to be
+a system call.
+
+
