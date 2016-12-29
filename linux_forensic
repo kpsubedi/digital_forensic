@@ -10,6 +10,15 @@ Write    modify         create/delete
 Execute  run            cd
 
 *****************************
+owner/user     group     others
+
+managing permission
+===================
+chown, chgrp, chmod
+
+Example:
+
+******************************
 
 Accounts: superuser(root), system accounts( mail, apache, bin, uucp etc), and normal user accounts
 
