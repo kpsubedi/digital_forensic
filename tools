@@ -37,6 +37,18 @@ File System Forensic
 http://wiki.sleuthkit.org/index.php?title=The_Sleuth_Kit_commands
 https://possiblelossofprecision.net/?p=1216
 https://github.com/sleuthkit/sleuthkit
+Commands
+=========
+
+['mmcat', 'mmcli', 'mmd', 'mmls', 'mmount', 'mmove', 'mmstat']
+['blkcalc', 'blkcat' ,'blkls' , 'blkstat']
+['ils','icat', 'img_cat', 'img_stat' ,'jcat' ,'jls']
+['fsstat', 'fcat', 'ffind', 'fls']
+['tsk_recover', 'tsk_loaddb', 'tsk_gettimes', 'tsk_comparedir']
+['sorter', 'sigfind']
+
+
+
 2. MAC Robber
 
 
