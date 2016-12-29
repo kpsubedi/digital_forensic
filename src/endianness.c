@@ -1,4 +1,9 @@
-
+// Example
+// 0xFF00AA11
+// 
+// 00000000 00000001 00000002 00000003
+// FF		00	AA	11     : Big Endian
+// 11		AA	00	FF	: Little Endian
 
 #include <endian.h>
 #include <stdio.h>
