@@ -148,7 +148,8 @@ SGID       run file as      inherit group
             group owner     group owner
 
 
-STICKY BIT
+STICKY BIT    N/A            remove only
+				if owner
 
 **************************
 
@@ -266,42 +267,63 @@ total 0
 -rw-rw-r-- 1 bob sales 0 Dec 29 10:42 bobfile1
 bob@null-VirtualBox:/data/sales$ 
 Which allows member of the sales group to access file
-
-
-
-
-
 #####################
-null@null-VirtualBox:~/test$ mkdir sample1
-null@null-VirtualBox:~/test$ ls -ltr
-total 4
-drwxrwxr-x 2 null null 4096 Dec 27 16:13 sample1
-null@null-VirtualBox:~/test$ sudo groupadd it
+root@null-VirtualBox:~# sudo su - eric
+eric@null-VirtualBox:~$ cd /data/sales
+eric@null-VirtualBox:/data/sales$ ls -ltr
+total 0
+-rw-rw-r-- 1 bob bob   0 Dec 29 10:40 bobfiles
+-rw-rw-r-- 1 bob sales 0 Dec 29 10:42 bobfile1
+eric@null-VirtualBox:/data/sales$ rm bobfile1 
+eric@null-VirtualBox:/data/sales$ 
+
+root@null-VirtualBox:/data# chmod o+t *
+root@null-VirtualBox:/data# ls -l
+total 8
+drwxrws--T 2 root accounts 4096 Dec 29 10:38 accounts
+drwxrws--T 2 root sales    4096 Dec 29 10:47 sales
+
+null@null-VirtualBox:~$ sudo su - bob
 [sudo] password for null: 
-null@null-VirtualBox:~/test$ chown null:it sample1/
-chown: changing ownership of 'sample1/': Operation not permitted
-null@null-VirtualBox:~/test$ sudo chown null:it sample1/
-null@null-VirtualBox:~/test$ ls -ltr
-total 4
-drwxrwxr-x 2 null it 4096 Dec 27 16:13 sample1
+bob@null-VirtualBox:~$ cd /data/sales/
+bob@null-VirtualBox:/data/sales$ ls
+bobfiles
+bob@null-VirtualBox:/data/sales$ touch bobfiles
+bob@null-VirtualBox:/data/sales$ l s-l
+ls: cannot access 's-l': No such file or directory
+bob@null-VirtualBox:/data/sales$ ls -l
+total 0
+-rw-rw-r-- 1 bob bob 0 Dec 29 10:50 bobfiles
+root@null-VirtualBox:/data# su - bob
+bob@null-VirtualBox:~$ ls
+examples.desktop
+bob@null-VirtualBox:~$ cd /data/
+bob@null-VirtualBox:/data$ cd sales/
+bob@null-VirtualBox:/data/sales$ ls
+bobfiles
+bob@null-VirtualBox:/data/sales$ touch bob1
+bob@null-VirtualBox:/data/sales$ ls -l
+total 0
+-rw-rw-r-- 1 bob sales 0 Dec 29 10:52 bob1
+-rw-rw-r-- 1 bob bob   0 Dec 29 10:50 bobfiles
+bob@null-VirtualBox:/data/sales$ exit
+logout
+root@null-VirtualBox:/data# su - eric
+eric@null-VirtualBox:~$ cd /data/sales/
+eric@null-VirtualBox:/data/sales$ ls
+bob1  bobfiles
+eric@null-VirtualBox:/data/sales$ ls -l
+total 0
+-rw-rw-r-- 1 bob sales 0 Dec 29 10:52 bob1
+-rw-rw-r-- 1 bob bob   0 Dec 29 10:50 bobfiles
+eric@null-VirtualBox:/data/sales$ rm bob1
+rm: cannot remove 'bob1': Operation not permitted
+eric@null-VirtualBox:/data/sales$ 
 
-Create three users with two has group as "it" and one without 
 
 
-null@null-VirtualBox:~/test$ sudo usermod -G it user1
-null@null-VirtualBox:~/test$ sudo usermod -G it user2
+######################
 
-when user1 creates a file in sample1, the newly created file has user1 as owner and group. 
-If we set sgid bit the original group owner is preserved.
-
-null@null-VirtualBox:~/test$ ls -ltr
-total 4
-drwxrwxr-x 2 null it 4096 Dec 27 16:13 sample1
-null@null-VirtualBox:~/test$ sudo chmod g+s sample1
-null@null-VirtualBox:~/test$ ls -ltr
-total 4
-drwxrwsr-x 2 null it 4096 Dec 27 16:13 sample1
-null@null-VirtualBox:~/test$
 
 
 
