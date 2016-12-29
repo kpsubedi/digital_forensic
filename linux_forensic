@@ -1,5 +1,16 @@
 Linux Security Model
 ====================
+*********************************
+*****    Files          Directories
+*****
+Read     read           ls
+
+Write    modify         create/delete
+
+Execute  run            cd
+
+*****************************
+
 Accounts: superuser(root), system accounts( mail, apache, bin, uucp etc), and normal user accounts
 
 
