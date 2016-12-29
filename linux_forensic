@@ -399,6 +399,40 @@ Commands/features:
 Checksum: correct
 null@null-VirtualBox:~$ 
 
+split
+*****
+
+split -d -b XXm <file to be split> <prefix of output files>
+XX: is size of the resulting file
+
+# split -d -b 2000m image.disk1.dd image.split.
+-b: binary file as input
+-d: numeric numbering
+
+Above command splits image.disk1.dd into 2 GB files
+for example, image.split.01 image.split.02 image.split.03 
+
+We can merge these files using cat
+# cat image.split.01 image.split.02 image.split.03 > image.new
+
+# dd if=/dev/hda | split -d -b 2000m - image.split.
+- after 2000m is descriptor for "standard input"
+
+# sha1sum /dev/sda1
+
+# dd if=/dev/sda1 | gzip -c > sha1.dd.gz
+
+# gzip -cd sha1.dd.gz | sha1sum
+
+dd over the wire 
+================
+Server: 192.168.1.10
+*******
+# nc -l -p 4545 | dd of=/data/evid/net_image.dd
+Client
+*******
+# dd if=/dev/sda | nc 192.168.1.10 4545 
+
 
 
 File System
