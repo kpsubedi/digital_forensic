@@ -17,6 +17,63 @@ managing permission
 chown, chgrp, chmod
 
 Example:
+root@null-VirtualBox:/home/null# touch afile
+root@null-VirtualBox:/home/null# ls -ltr
+total 216
+-rw-rw-r--  1 null null 12201 Jul 13 05:12 setup_6.x
+-rw-r--r--  1 null null  8980 Sep 14 13:08 examples.desktop
+drwxr-xr-x  2 null null  4096 Sep 14 13:21 Videos
+drwxr-xr-x  2 null null  4096 Sep 14 13:21 Templates
+drwxr-xr-x  2 null null  4096 Sep 14 13:21 Public
+drwxr-xr-x  2 null null  4096 Sep 14 13:21 Music
+drwxr-xr-x  2 null null  4096 Nov 22 16:17 Pictures
+drwxr-xr-x 19 null null  4096 Dec  2 10:28 Documents
+drwxr-xr-x  2 null null  4096 Dec 22 13:30 Desktop
+-rw-rw-r--  1 null null 75727 Dec 22 14:10 kul_unofficial_transcript.pdf
+-rw-rw-r--  1 null null     8 Dec 22 14:55 teachingphilosophy.aux
+-rw-rw-r--  1 null null 34235 Dec 22 14:55 teachingphilosophy.pdf
+-rw-rw-r--  1 null null  7240 Dec 22 14:55 teachingphilosophy.synctex.gz
+-rw-rw-r--  1 null null 18943 Dec 22 14:55 teachingphilosophy.log
+-rw-rw-r--  1 null null  2191 Dec 22 14:55 teachingphilosophy.tex
+-rw-rw-r--  1 null null   115 Dec 27 16:00 demo.c
+drwxr-xr-x  5 null null  4096 Dec 28 16:03 Downloads
+drwxrwxr-x  4 null null  4096 Dec 28 16:04 test
+drwxrwxr-x  3 null null  4096 Dec 28 16:15 digital_forensic
+-rw-r--r--  1 root root     0 Dec 29 10:15 afile
+root@null-VirtualBox:/home/null# 
+
+Question 1. 
+root@null-VirtualBox:/home/null# su - null
+null@null-VirtualBox:~$ ls
+afile   Desktop           Documents  examples.desktop               Music     Public     teachingphilosophy.aux  teachingphilosophy.pdf         teachingphilosophy.tex  test
+demo.c  digital_forensic  Downloads  kul_unofficial_transcript.pdf  Pictures  setup_6.x  teachingphilosophy.log  teachingphilosophy.synctex.gz  Templates               Videos
+null@null-VirtualBox:~$ ls -ltr
+total 216
+-rw-rw-r--  1 null null 12201 Jul 13 05:12 setup_6.x
+-rw-r--r--  1 null null  8980 Sep 14 13:08 examples.desktop
+drwxr-xr-x  2 null null  4096 Sep 14 13:21 Videos
+drwxr-xr-x  2 null null  4096 Sep 14 13:21 Templates
+drwxr-xr-x  2 null null  4096 Sep 14 13:21 Public
+drwxr-xr-x  2 null null  4096 Sep 14 13:21 Music
+drwxr-xr-x  2 null null  4096 Nov 22 16:17 Pictures
+drwxr-xr-x 19 null null  4096 Dec  2 10:28 Documents
+drwxr-xr-x  2 null null  4096 Dec 22 13:30 Desktop
+-rw-rw-r--  1 null null 75727 Dec 22 14:10 kul_unofficial_transcript.pdf
+-rw-rw-r--  1 null null     8 Dec 22 14:55 teachingphilosophy.aux
+-rw-rw-r--  1 null null 34235 Dec 22 14:55 teachingphilosophy.pdf
+-rw-rw-r--  1 null null  7240 Dec 22 14:55 teachingphilosophy.synctex.gz
+-rw-rw-r--  1 null null 18943 Dec 22 14:55 teachingphilosophy.log
+-rw-rw-r--  1 null null  2191 Dec 22 14:55 teachingphilosophy.tex
+-rw-rw-r--  1 null null   115 Dec 27 16:00 demo.c
+drwxr-xr-x  5 null null  4096 Dec 28 16:03 Downloads
+drwxrwxr-x  4 null null  4096 Dec 28 16:04 test
+drwxrwxr-x  3 null null  4096 Dec 28 16:15 digital_forensic
+-rw-r--r--  1 root root     0 Dec 29 10:15 afile
+null@null-VirtualBox:~$ 
+
+can null delete a file "afile"?
+
+
 
 ******************************
 
