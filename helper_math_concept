@@ -1,0 +1,59 @@
+XOR 
+====
+
+XOR of two strings in {0,1}^n is their bit-wise addition mod 2
+
+Truth Table
+***********
+x   y | x xor y
+---------------
+0   0 | 0
+0   1 | 1
+1   0 | 1
+1   1 | 0
+************
+
+
+0 1 1 0 1 1 1 1
+1 0 1 1 0 1 0 1  xor 
+----------------
+
+An important property of XOR
+
+Thm: Y a random variable over {0,1}^n, X an independent uniform variable on {0,1}^n
+Then Z := Y xor X is uniform variable on {0,1}^n
+
+Proof:
+(for n=1)
+pr[Z=0] = 
+
+Y    Pr
+------
+0    P0
+1    P1
+
+X is uniform random variable
+
+X   Pr
+------
+0   1/2
+1   1/2
+
+Probability for joint distribution for X and Y
+
+Y     X    Pr (Px * Py)
+0     0    P0/2
+0     1    P0/2 
+1     0    P1/2 
+1     1    P1/2
+
+Pr[Z=0] = 1/2
+Note Z is the xor of X and Y.
+
+Pr[(x, y) = (0, 0) or (x,y) =(1,1)] = Pr[(x,y)=(0,0)] + Pr[(x,y) = (1,1)] = P0/2 + P1/2 = 1/2
+
+Pr[Z=1] = 1/2
+
+
+
+
