@@ -1,5 +1,8 @@
 Linux Security Model
 ====================
+Accounts: superuser(root), system accounts( mail, apache, bin, uucp etc), and normal user accounts
+
+
 *********************************
 *****    Files          Directories
 *****
@@ -136,8 +139,18 @@ drwxrwxr-x  3 null null  4096 Dec 28 16:15 digital_forensic
 
 
 ******************************
+*****       File         Directory
+*****
+SUID       run file as      N/A
+            owner
 
-Accounts: superuser(root), system accounts( mail, apache, bin, uucp etc), and normal user accounts
+SGID       run file as      inherit group 
+            group owner     group owner
+
+
+STICKY BIT
+
+**************************
 
 
 #ls -l /etc/passwd /etc/shadow
@@ -181,7 +194,84 @@ SGID
 ****
 Process's effective group ID is changed to the group-owner of the file, and a user is 
 granted access based on permissions granted to that group.
+Example
+####################
+root@null-VirtualBox:~# groupadd sales
+root@null-VirtualBox:~# groupadd accounts
+root@null-VirtualBox:~# adduser bob
+Adding user `bob' ...
+Adding new group `bob' (1007) ...
+Adding new user `bob' (1004) with group `bob' ...
+Creating home directory `/home/bob' ...
+Copying files from `/etc/skel' ...
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+Changing the user information for bob
+Enter the new value, or press ENTER for the default
+	Full Name []: 
+	Room Number []: 
+	Work Phone []: 
+	Home Phone []: 
+	Other []: 
+Is the information correct? [Y/n] 
+root@null-VirtualBox:~# adduser eric
+Adding user `eric' ...
+Adding new group `eric' (1008) ...
+Adding new user `eric' (1005) with group `eric' ...
+Creating home directory `/home/eric' ...
+Copying files from `/etc/skel' ...
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+Changing the user information for eric
+Enter the new value, or press ENTER for the default
+	Full Name []: 
+	Room Number []: 
+	Work Phone []: 
+	Home Phone []: 
+	Other []: 
+Is the information correct? [Y/n] 
+root@null-VirtualBox:~# 
+root@null-VirtualBox:~# usermod bob -aG sales
+root@null-VirtualBox:~# usermod eric -aG sales
+root@null-VirtualBox:~# id bob
+uid=1004(bob) gid=1007(bob) groups=1007(bob),1005(sales)
+root@null-VirtualBox:~# id eric
+uid=1005(eric) gid=1008(eric) groups=1008(eric),1005(sales)
+root@null-VirtualBox:~# 
+root@null-VirtualBox:~# mkdir -p /data/sales
+root@null-VirtualBox:~# mkdir -p /data/accounts
+root@null-VirtualBox:~# chgrp sales /data/sales/
+root@null-VirtualBox:~# chgrp accounts /data/accounts/
+root@null-VirtualBox:~# 
+root@null-VirtualBox:~# chmod 770 /data/*
+root@null-VirtualBox:~# su - bob
+bob@null-VirtualBox:~$ cd /data/sales
+bob@null-VirtualBox:/data/sales$ touch bobfiles
+bob@null-VirtualBox:/data/sales$ ls -lt
+total 0
+-rw-rw-r-- 1 bob bob 0 Dec 29 10:40 bobfiles
+bob@null-VirtualBox:/data/sales$ 
 
+root@null-VirtualBox:~# chmod g+s /data/*
+root@null-VirtualBox:~# su - bob
+bob@null-VirtualBox:~$ cd /data/sales/
+bob@null-VirtualBox:/data/sales$ ls
+bobfiles
+bob@null-VirtualBox:/data/sales$ touch bobfile1
+bob@null-VirtualBox:/data/sales$ ls -ltr
+total 0
+-rw-rw-r-- 1 bob bob   0 Dec 29 10:40 bobfiles
+-rw-rw-r-- 1 bob sales 0 Dec 29 10:42 bobfile1
+bob@null-VirtualBox:/data/sales$ 
+Which allows member of the sales group to access file
+
+
+
+
+
+#####################
 null@null-VirtualBox:~/test$ mkdir sample1
 null@null-VirtualBox:~/test$ ls -ltr
 total 4
