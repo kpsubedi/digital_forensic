@@ -67,7 +67,31 @@ The "sync" parameter corrects this by padding the unreadable output block with z
 a "fake" sector or block (full of zeros) to represent the missing one. The rest of the disk image will then 
 have the correct sector numbers (offsets) expected by the filesystem it contains.
 
-# dd if=/dev/sda of=image.raw conv=noerror,sync
+# dd if=/dev/sda of=image.raw conv=noerror,sync : protection from unreadable blocks (skipping and padding them
+with zeros)
+
+Padding the output impacts the forensic acquisition in that the image is modified and new data (the zeros) has been 
+added. Cryptographic checksums of the disk will not match the original data on the disk (especially if there are new or 
+changing unreadable areas of a disk). This problem can be managed by logging hash windows. 
+
+Issues with dd:
+===============
+1. Transfer block size can be larger than the physical media sector size. This is problematic when a read error occurs, 
+because the remaining sectors in the larger block are padded with zeros, not just the one unreadable sector. 
+This means some normal readable sectors might be excluded from the forensic image. A block size larger than 
+sector size could also cause additional padding sectors to be added to the end of a forensic image (if the 
+image size is not divisible to the block size). The potential performance gained from increasing the block 
+size must be weighed against the risk of losing evidence from a large padded block.
+
+2. Traditional dd has no capability for hashing, logging to a file, or other features you would expect 
+of a forensic acquisition tool. 
+
+
+dcfldd and dc3dd
+****************
+
+
+
 
 
 
