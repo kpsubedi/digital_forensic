@@ -90,6 +90,20 @@ of a forensic acquisition tool.
 dcfldd and dc3dd
 ****************
 
+# dcfldd if=/dev/sda of=image.raw conv=noerror,sync errlog=error.log
+
+Image a disk, ensuring blocks containing unreadable sectors are padded 
+and don't cause an abort. Errors are written to a separate error log file. The dcfldd tool 
+doesnot use conv=noerror,sync by default; you must add it manually.
+
+# dc3dd if=/dev/sda of=image.raw log=error.log
+No conv=noerror,sync flag needed because it's built in.
+
+Both dcfldd and dc3dd have additional features for cryptographic hashing, image splitting, and piping to 
+external program.
+
+
+
 
 
 
