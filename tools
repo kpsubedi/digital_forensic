@@ -42,7 +42,11 @@ Commands
 
 ['mmcat', 'mmcli', 'mmd', 'mmls', 'mmount', 'mmove', 'mmstat']
 ['blkcalc', 'blkcat' ,'blkls' , 'blkstat']
-['ils','icat', 'img_cat', 'img_stat' ,'jcat' ,'jls']
+['ils','icat', 'img_cat', 'img_stat'] 
+# img_stat -i list
+: Commonly used forensic formats by using the Sleuth Kit
+
+['jcat' ,'jls']
 ['fsstat', 'fcat', 'ffind', 'fls']
 ['tsk_recover', 'tsk_loaddb', 'tsk_gettimes', 'tsk_comparedir']
 ['sorter', 'sigfind']
