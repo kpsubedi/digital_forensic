@@ -29,6 +29,11 @@ export HISTFILESIZE=-1
 export HISTSIZE=-1
 export HISTTIMEFORMAT="%F-%R "
 
+
+Linux Auditing
+
+auditd, a Linux audit package. Typically this involves running the auditd daemon with pam_tty_audit.so
+configured with a pam module. We can review audit trail activity using the **aureport** command.
 *********
 
 Toolchains
