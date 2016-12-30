@@ -110,7 +110,28 @@ Acquire an Image to Multiple Destination
 Hash Windows
 ************
 
-When 
+When we image an older or damaged disk, block read errors can occur. 
+These errors are happen in random places duing the acquisition, and the frequency can increase
+over time. This creates a challenge when you're preserving the integrity of evidence, becasue
+the cryptographic hash might be different each time the disk is read (reacquired, duplicated, verified, and so on)
+
+The work around of this problem is to use hash windows, or piecewise hashing. 
+A hash window is a separate cryptographic hash taken over a smaller sequence of sectors on a disk. For example,
+a hash window size of 10MB during acquisition will generate a separate hash for every 10MB sequence of 
+sectors and generate a list of hashes for a disk. If one sector becomes unreadable (or is modified for some reason), 
+the hash of that window will be invalid. But all the other hash windows on the disk will maintain their integrity.
+So even if the hash of the full disk is invalid, if a hash window matches, the integrity of the data 
+found within it will be preserved.
+
+# dcfldd if=/dev/sda of=image.raw conv=noerror,sync hashwindow=1M
+
+dc3dd hash windows are referred to as piecewise hashing, and hashes can be created, not by sector range but per 
+split file.
+
+# dc3dd if=/dev/sda hof=image.raw ofs=image.000 ofsz=1G hlog=hash.log hash=md5
+
+
+
 
 
 
