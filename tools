@@ -5,6 +5,31 @@ null@null-VirtualBox:~$ sudo apt-get install taskwarrior
 Example
 
 *********
+Audit Trail
+%%%%%%%%%%%
+
+Shell History
+-------------
+
+1. Record the command entered by the examiner
+2. Record a timestamp for each command entered
+3. Record all commands, including duplicates, comments, and space-prefixed commands
+4. Avoid truncating or overwriting history files
+5. Avoid conflicts when using multiple terminal windows on the same system
+6. Include root and non-root command history
+
+Add the following lines in Linux startup scripts e.g. .bashrc
+
+set -o history
+shopt -s histappend
+export HISTCONTROL=
+export HISTIGNORE=
+export HISTFILE=~/.bash_history
+export HISTFILESIZE=-1
+export HISTSIZE=-1
+export HISTTIMEFORMAT="%F-%R "
+
+*********
 
 Toolchains
 ==========
