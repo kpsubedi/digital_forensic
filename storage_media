@@ -70,5 +70,34 @@ root@forensics-01:~# blockdev --getpbsz /dev/sda
 root@forensics-01:~# blockdev --getss /dev/sda
 512
 
+Linux Kernel and Storage
+************************
+
+root@forensic-01:~# udevadm info /dev/sda
+P: /devices/pci0000:00/0000:00:10.0/host2/target2:0:0/2:0:0:0/block/sda
+N: sda
+S: disk/by-path/pci-0000:00:10.0-scsi-0:0:0:0
+E: DEVLINKS=/dev/disk/by-path/pci-0000:00:10.0-scsi-0:0:0:0
+E: DEVNAME=/dev/sda
+E: DEVPATH=/devices/pci0000:00/0000:00:10.0/host2/target2:0:0/2:0:0:0/block/sda
+E: DEVTYPE=disk
+E: ID_BUS=scsi
+E: ID_MODEL=Virtual_disk
+E: ID_MODEL_ENC=Virtual\x20disk\x20\x20\x20\x20
+E: ID_PART_TABLE_TYPE=dos
+E: ID_PATH=pci-0000:00:10.0-scsi-0:0:0:0
+E: ID_PATH_TAG=pci-0000_00_10_0-scsi-0_0_0_0
+E: ID_REVISION=1.0
+E: ID_SCSI=1
+E: ID_TYPE=disk
+E: ID_VENDOR=VMware
+E: ID_VENDOR_ENC=VMware\x20\x20
+E: MAJOR=8
+E: MINOR=0
+E: SUBSYSTEM=block
+E: USEC_INITIALIZED=58714
+
+root@forensic-01:~# udevadm monitor
+
 
 
