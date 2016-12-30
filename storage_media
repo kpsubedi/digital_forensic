@@ -18,5 +18,57 @@
     
 Interfaces and Physical Connectors
 **********************************
+1. Serial ATA
+2. Serial Attached SCSI and Fiber Channel
+3. Non-Volatile Memory Express
+4. Universal Serial Bus
+5. Thunderbolt
+6. Legacy Interfaces
 
-    
+
+Commands, Protocols, and Bridges
+********************************
+1. ATA Commands
+2. SCSI Commands
+3. NVME Commands
+4. Bridging, Tunneling, and Pass-Through
+
+
+
+Special Topics
+**************
+1. Host Protected Area (HPA)
+2. Device Configuration Overlay (DCO)
+
+
+
+On Linux we can use the /sys pseudo filesystem to find the logical and physical sector sizes of a disk. 
+For example, we can determine the physical and logical sector sizes of a the attached disk /dev/sda as follows:
+
+# dmesg
+
+digitalforensic@forensics-01:~$ dmesg | grep logical 
+[    1.673746] sd 2:0:0:0: [sda] 629145600 512-byte logical blocks: (322 GB/300 GiB)
+
+
+digitalforensic@forensics-01:/sys/block/sda/queue$ ls
+add_random           max_hw_sectors_kb       optimal_io_size
+discard_granularity  max_integrity_segments  physical_block_size
+discard_max_bytes    max_sectors_kb          read_ahead_kb
+discard_zeroes_data  max_segments            rotational
+hw_sector_size       max_segment_size        rq_affinity
+iosched              minimum_io_size         scheduler
+iostats              nomerges                write_same_max_bytes
+logical_block_size   nr_requests
+
+digitalforensic@forensics-01:/sys/block/sda/queue$ cat physical_block_size
+digitalforensic@forensics-01:/sys/block/sda/queue$ cat logical_block_size
+
+
+root@forensics-01:~# blockdev --getpbsz /dev/sda
+512
+root@forensics-01:~# blockdev --getss /dev/sda
+512
+
+
+
