@@ -102,6 +102,17 @@ No conv=noerror,sync flag needed because it's built in.
 Both dcfldd and dc3dd have additional features for cryptographic hashing, image splitting, and piping to 
 external program.
 
+Acquire an Image to Multiple Destination
+****************************************
+# dc3dd if=/dev/sda of=/data/backup.raw of=/exam/local-lab.raw hash=md5 hash=sha1 hash=sha512
+
+
+Hash Windows
+************
+
+When 
+
+
 
 
 
