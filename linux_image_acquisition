@@ -50,5 +50,24 @@ Default block size is 512 bytes.
 
 #dd if=/dev/sr0 of=/home/$USER/cd_file.iso bs=2048 conv=sync
 
+There can be challenges when using dd to forensically image a disk. 
+If read erros occur in the middle of an acquisition, dd will abort with an "Input/Output Error". 
+Address this issue by adding conv=noerror, which will force dd to skip over the unreadable 
+block and continue. The problem with skipping over unreadable blocks is that the sector 
+offset on the destination file changes for filesystem blocks on the rest of the disk, 
+causing the rest of the filesystem on the disk to appear corrupted. 
+
+To illustrate, consider the pages of a book. Suppose page 99 is ripped out. If the table of conents points to 
+a chapter starting at page 200, it's still possible to find it. The book's page numbers are intact, 
+even with the missing page. But this is not the case when sector 99 is ripped out of a disk image (due to
+a read error). The rest of the sectors are renumberred, and the filesystem's "table of contents" will point 
+to the wrong blocks after sector 99.
+
+The "sync" parameter corrects this by padding the unreadable output block with zeros, essentially creating 
+a "fake" sector or block (full of zeros) to represent the missing one. The rest of the disk image will then 
+have the correct sector numbers (offsets) expected by the filesystem it contains.
+
+# dd if=/dev/sda of=image.raw conv=noerror,sync
+
 
 
