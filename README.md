@@ -2,14 +2,15 @@
 
 ## notes
 
-This directiry contains the notes. 
+This directory contains the notes. 
 
 ## prerequisite
 
 Contains the pre-req concepts used in computer science in general such as math, algorithm etc
 
 ## problems
-A list of problems with urls
+A list of problems with urls. We are using similar concepts to solve different projects. A sample solution write-up will be 
+provide as a reference.
 
 ## src
 Sample code snippet to illustrate the concepts
