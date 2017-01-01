@@ -171,6 +171,14 @@ Recover Deleted File:
 
 Note: Deleted files i-nodes are shown in "<697505>".
 
+Open Filesytem in read-write mode
+=========
+root@null-VirtualBox:~# man debugfs
+root@null-VirtualBox:~# debugfs -w /dev/sda1
+debugfs 1.42.13 (17-May-2015)
+debugfs:  q
+
+
 ************************
 exiftool:
 Read and write meta-information in files.
