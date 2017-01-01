@@ -178,6 +178,44 @@ root@null-VirtualBox:~# debugfs -w /dev/sda1
 debugfs 1.42.13 (17-May-2015)
 debugfs:  q
 
+root@null-VirtualBox:~# debugfs -w /dev/sda1
+debugfs 1.42.13 (17-May-2015)
+debugfs:  cd /home/null
+debugfs:  ls
+debugfs:  ls -d
+debugfs:  mi <656813>
+                          Mode    [0100600] 
+                       User ID    [1000] 
+                      Group ID    [1000] 
+                          Size    [3791] 
+                 Creation time    [1483277243] 
+             Modification time    [1483277243] 
+                   Access time    [1483277240] 
+                 Deletion time    [0] 
+                    Link count    [1] 
+              Block count high    [0] 
+                   Block count    [8] 
+                    File flags    [0x80000] 
+                    Generation    [0x47e7b388] 
+                      File acl    [0] 
+           High 32bits of size    [0] 
+              Fragment address    [0] 
+               Direct Block #0    [127754] 
+               Direct Block #1    [4] 
+               Direct Block #2    [0] 
+               Direct Block #3    [0] 
+               Direct Block #4    [1] 
+               Direct Block #5    [2662306] 
+               Direct Block #6    [0] 
+               Direct Block #7    [0] 
+               Direct Block #8    [0] 
+               Direct Block #9    [0] 
+              Direct Block #10    [0] 
+              Direct Block #11    [0] 
+                Indirect Block    [0] 
+         Double Indirect Block    [0] 
+         Triple Indirect Block    [0] 
+debugfs:  
 
 ************************
 exiftool:
