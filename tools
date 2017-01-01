@@ -171,6 +171,63 @@ Recover Deleted File:
 
 Note: Deleted files i-nodes are shown in "<697505>".
 
+************************
+exiftool:
+Read and write meta-information in files.
+
+Read Meta info:
+
+null@null-VirtualBox:~/Downloads$ exiftool -a -G1 linuxintro-LEFE-3.78.pdf
+[ExifTool]      ExifTool Version Number         : 10.10
+[System]        File Name                       : linuxintro-LEFE-3.78.pdf
+[System]        Directory                       : .
+[System]        File Size                       : 1981 kB
+[System]        File Modification Date/Time     : 2017:01:01 08:01:08-06:00
+[System]        File Access Date/Time           : 2017:01:01 08:01:10-06:00
+[System]        File Inode Change Date/Time     : 2017:01:01 08:01:08-06:00
+[System]        File Permissions                : rw-rw-r--
+[File]          File Type                       : PDF
+[File]          File Type Extension             : pdf
+[File]          MIME Type                       : application/pdf
+[PDF]           PDF Version                     : 1.4
+[PDF]           Linearized                      : No
+[PDF]           Page Count                      : 197
+[PDF]           Language                        : en-US
+[PDF]           Title                           : kul
+[PDF]           Author                          : kul
+[PDF]           Creator                         : Writer
+[PDF]           Producer                        : OpenOffice.org 3.0
+[PDF]           Create Date                     : 2008:12:06 19:52:01-05:00
+[XMP-x]         XMP Toolkit                     : Image::ExifTool 10.10
+[XMP-dc]        Title                           : kul
+[XMP-pdf]       Author                          : kul
+null@null-VirtualBox:~/Downloads
 
 
-
+Write Meta Info:
+null@null-VirtualBox:~/Downloads$ exiftool -Title='Digital Forensic' linuxintro-LEFE-3.78.pdf 
+    1 image files updated
+null@null-VirtualBox:~/Downloads$ exiftool -a -G1 linuxintro-LEFE-3.78.pdf 
+[ExifTool]      ExifTool Version Number         : 10.10
+[System]        File Name                       : linuxintro-LEFE-3.78.pdf
+[System]        Directory                       : .
+[System]        File Size                       : 1981 kB
+[System]        File Modification Date/Time     : 2017:01:01 08:08:50-06:00
+[System]        File Access Date/Time           : 2017:01:01 08:08:50-06:00
+[System]        File Inode Change Date/Time     : 2017:01:01 08:08:50-06:00
+[System]        File Permissions                : rw-rw-r--
+[File]          File Type                       : PDF
+[File]          File Type Extension             : pdf
+[File]          MIME Type                       : application/pdf
+[PDF]           PDF Version                     : 1.4
+[PDF]           Linearized                      : No
+[PDF]           Page Count                      : 197
+[PDF]           Language                        : en-US
+[PDF]           Title                           : Digital Forensic
+[PDF]           Author                          : kul
+[PDF]           Creator                         : Writer
+[PDF]           Producer                        : OpenOffice.org 3.0
+[PDF]           Create Date                     : 2008:12:06 19:52:01-05:00
+[XMP-x]         XMP Toolkit                     : Image::ExifTool 10.10
+[XMP-dc]        Title                           : Digital Forensic
+[XMP-pdf]       Author                          : kul
