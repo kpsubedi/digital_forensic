@@ -217,6 +217,42 @@ debugfs:  mi <656813>
          Triple Indirect Block    [0] 
 debugfs:  
 
+
+debugfs:  freefrag
+Device: /dev/sda1
+Blocksize: 4096 bytes
+Total blocks: 4194048
+Free blocks: 1639751 (39.1%)
+
+Min. free extent: 4 KB 
+Max. free extent: 759124 KB
+Avg. free extent: 1884 KB
+Num. free extent: 3474
+
+HISTOGRAM OF FREE EXTENT SIZES:
+Extent Size Range :  Free extents   Free Blocks  Percent
+    4K...    8K-  :           930           930    0.06%
+    8K...   16K-  :           519          1231    0.08%
+   16K...   32K-  :           386          1944    0.12%
+   32K...   64K-  :           361          3883    0.24%
+   64K...  128K-  :           265          5919    0.36%
+  128K...  256K-  :           218          9585    0.58%
+  256K...  512K-  :           231         21098    1.29%
+  512K... 1024K-  :           166         29748    1.81%
+    1M...    2M-  :           133         48342    2.95%
+    2M...    4M-  :            93         68688    4.19%
+    4M...    8M-  :            53         75703    4.62%
+    8M...   16M-  :            40        108296    6.60%
+   16M...   32M-  :            36        208336   12.71%
+   32M...   64M-  :            30        323077   19.70%
+   64M...  128M-  :             9        178190   10.87%
+  256M...  512M-  :             2        186115   11.35%
+  512M... 1024M-  :             2        366424   22.35%
+debugfs
+
+
+
+
 ************************
 exiftool:
 Read and write meta-information in files.
