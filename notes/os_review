@@ -26,6 +26,108 @@ There is a porcess attempting to write to the file and you are trying to read th
 of the same file. The promise the system has to make is either you see before the file
 write started or you see after the write completed. You donot see the file half written.
 
+****************
+What is a "FILE"?
+Ans: 
+How files are stored?
+Ans: 
+Typically, disk contains multiple partitions. Each partition contains it's own file system. 
+We can say file systems are located inside of a disk partition. The parition is usually 
+organized into 512-bytes per sector. When the partition is formatted as Ext3, 
+consecutive sectors will be grouped into blocks, whose size can range from 
+1024 to 4096 bytes (1K to 4K). The blocks are grouped together into block groups,
+whose size will be tens of thousands of blocks. 
+
+Each file has data stored in three major locations:
+1. Blocks
+2. Inodes
+3. Directory Entries
+
+A file content is stored in blocks, which are allocated for exclusive use of the file. 
+A file is allocated as many blocks as it needs. Ideally, the file will be allocated consecutive blocks, but 
+this is not always possible.
+
+The metadata for the file is stored in an I-node structure, which is located in 
+an inode table at the beginning of a block group. There are a finite number of inodes 
+and each is assigned to a block group. File metadata includes the temporal data 
+such as the last modified, last accessed, last changed, and deleted times. 
+Metadata also includes the file size, user ID, group ID, permissions, and block 
+addresses where the file content is stored.
+
+The addresses of the first 12 blocks are saved in the inode and additional addresses are 
+stored externally in blocks, called indirect blocks. If the file requires many blocks and not 
+all of the addresses can fit into one indirect block, a double indirect block is used whose 
+address is given in the inode. The double indirect block contains addresses of single 
+indirect blocks, which contains addresses of blocks with file content. 
+There is also a triple indirect address in the inode that adds one more layer of pointers.
+
+The file's name is stored in a directory entry structure (man 2 getdents), which is located in a block allocated to 
+the file's parent directory. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
