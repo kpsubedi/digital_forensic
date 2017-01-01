@@ -231,3 +231,5 @@ null@null-VirtualBox:~/Downloads$ exiftool -a -G1 linuxintro-LEFE-3.78.pdf
 [XMP-x]         XMP Toolkit                     : Image::ExifTool 10.10
 [XMP-dc]        Title                           : Digital Forensic
 [XMP-pdf]       Author                          : kul
+
+https://www.cs.montana.edu/courses/309/topics/4-disks/debugfs_example.html
