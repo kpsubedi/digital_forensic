@@ -123,6 +123,51 @@ list is extracted from Process Environment Block (PEB)
 http://www.ntfsundelete.com/
 
 
+*******************************
+debugfs
+root@null-VirtualBox:~# debugfs /dev/sda1
+debugfs 1.42.13 (17-May-2015)
+debugfs:  stats
+debugfs:  q
+
+Example: We removed a.out from home directory of null. We are going to use debugfs to recover the file.
+
+root@null-VirtualBox:/home/null# rm a.out 
+root@null-VirtualBox:/home/null# debugfs /dev/sda1
+debugfs 1.42.13 (17-May-2015)
+debugfs:  cd /home/null/
+debugfs:  ls -d
+
+
+
+Recover Deleted File:
+ 693881  (12) .    655361  (12) ..    693882  (16) .bashrc   
+ 693883  (16) .profile    693884  (20) .bash_logout   
+ 693885  (24) examples.desktop    657193  (16) .cache   
+ 657197  (20) .Xauthority    657196  (16) .dmrc   
+ 655375  (24) .xsession-errors    657199  (16) Desktop   
+ 657200  (20) Downloads    657201  (20) Templates    657202  (16) Public   
+ 657203  (20) Documents    657204  (16) Music    657205  (16) Pictures   
+ 657206  (16) Videos    657207  (16) .config    657212  (16) .local   
+ 657222  (16) .gnupg    657332  (16) .gconf    657381  (16) .mozilla   
+ 697502  (16) .viminfo    657329  (24) .ICEauthority   
+ 657396  (36) .sudo_as_admin_successful    657014  (16) .lesshst   
+ 657555  (24) .bash_history    655385  (28) .xsession-errors.old   
+ 701975  (28) .node_repl_history    695777  (24) .mysql_history   
+ 701980  (20) setup_6.x    704722  (12) .npm    657909  (20) .mongorc.js   
+ 657910  (16) .dbshell    828635  (12) .ssh    443159  (12) .pm2   
+ 693340  (20) .texmf-var    693789  (40) kul_unofficial_transcript.pdf   
+ 693846  (32) teachingphilosophy.tex    693862  (32) teachingphilosophy.log   
+ 655407  (12) test    657022  (32) demo.c   <656813> (16) a.out   
+ 695966  (32) teachingphilosophy.aux    696120  (32) teachingphilosophy.pdf   
+ 694072  (40) teachingphilosophy.synctex.gz    656725  (16) .dbus   
+ 656828  (20) rootfile.txt    656971  (24) digital_forensic   
+ 656968  (28) dump.org    657020  (24) searchlist.txt   
+ 656857  (16) file.org    656363  (16) .taskrc    657004  (16) .task   
+ 697435  (24) .wget-hsts    696444  (20) .gitconfig   
+ 697497  (28) read_elf_output    656504  (48) data1.ods   
+<697505> (28) .ICEauthority-c    656509  (2860) data1.csv   
+<697505> (2840) .ICEauthority-l 
 
 
 
