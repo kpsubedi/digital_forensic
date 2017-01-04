@@ -117,74 +117,12 @@ Power On
 and start trying to execute 
 - Remember when a processor which on it must always have some instructions to execute 
 - Very few instructions are pre-build into hardware there are very good reasons for this 
- - the main one being software can engineered changed and updated much more easily later 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ - the main one being software can engineered changed and updated much more easily later on the hardware can be
+ - all instructions come from some form of storage 
+ - storage built on specific hardware is often referred to as firmware as it's designed specifically 
+ for that hardware other instructions are software and come from storage mediums such as flash memory 
+ and hard disk drives
+ 
+ 
+ 
 
