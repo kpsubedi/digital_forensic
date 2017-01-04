@@ -65,6 +65,59 @@ The file's name is stored in a directory entry structure (man 2 getdents), which
 the file's parent directory. 
 
 
+Hard-Drives
+===========
+
+PATA (Parallel ATA) connector
+SATA (Serial ATA) connector
+Drive can be IDE but connectors can be PATA or SATA
+
+CD/DVD 
+-------
+used same cable but using slightly different protocols
+PATAPI or SATAPI
+
+PI = Packet Interface
+
+
+PCI bus
+=======
+used I/O Port
+
+
+DMA
+====
+- Alternate method of device communication
+- Much faster but much harder and requires a lot more setup code
+
+BIOS 
+- Basic Input/Output System
+ROM
+- Read-only Memory (Commonly writable these days)
+
+When power on ==> CPU gets on
+
+- CPU needs to run code 
+
+"where's the code?!"
+
+- Hard-wired to load code from the BIOS ROM at startup.
+
+
+BIOS and Booting
+----------------
+Power Off
+- Start from the processor of being switched off with the computer switched off there is no power in the system
+except for one component that one component is the system clock which is powered by a small battery on the 
+motherboard and keep track of the real world time this component however is not really relevant to what we are 
+looking 
+
+Power On
+- When you press the power button a variety of things happen but the main option is that the processors of powers on
+and start trying to execute 
+- Remember when a processor which on it must always have some instructions to execute 
+- Very few instructions are pre-build into hardware there are very good reasons for this 
+ - the main one being software can engineered changed and updated much more easily later 
 
 
 
