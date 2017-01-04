@@ -123,6 +123,53 @@ and start trying to execute
  for that hardware other instructions are software and come from storage mediums such as flash memory 
  and hard disk drives
  
+ Instructions vs. Code
+ ----------------------
+ Code 
+ - Written in text (e.g., C, C#, Java, etc.)
+ Instuctions
+ - Machine code 0s and 1s (binary) 
+ 
+ 
+ Processor powered on ==> loads the instruction from BIOS RoM 
+ 
+ Which is Pre-built System (it's firmware), Relatively small, Facilitates loading of software from 
+ HDD, USB, and Floppy & more.
+ 
+ Why PC uses BIOS not something more advanced?
+ ==> 
+ Two things:
+ - BIOS is legacy software 
+  1. Modern desktops and laptops use UEFL (Unified Extensible Firmware Interface). A lots of UEFI implementations have 
+ backwards support for operating systems which are only BIOS compatible 
+ 2. PC uses BIOS simply because of history 
+ - BIOS is not actually that basic despite of its name
+ 
+ What BIOS software does once it has been loaded by the processor?
+ 1. BIOS starts by checking the basic set of hardwares attached to the processor
+ - Checking processor functions
+ - Checking memory
+ - Detecting / setting up video output
+ - Detecting storage devices (e.g., HDD)
+ 
+ Once BIOS is verifies the system is in working condition.
+ It scans the list of available storage devices and checks them in turn for a boot section every.
+ 
+ Every Operating System (OS) has a different design loading requirements which would be 
+ an impractical number of variations for the BIOS to support instead the BIOS requires the 
+ disk to have one of two basic formats which you can use to load something called a bootloader.
+ For the legacy reasons the BIOS loaded 512 bytes from the start of a storage device. So 
+ bootloaders have to fit in the first 512 bytes of storage.
+ 
+ 
+ BIOS =====> First-Stage Bootloader (460 bytes) last two bytes: 0x55 0xAA (i.e. 0xAA55) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
 
