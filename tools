@@ -322,3 +322,19 @@ Password Cracker
 # john --wordlist=/usr/share/wordlists/rockyou.txt --fork=4 combined.txt
 
 # john combined.txt --show 
+
+==========================
+$ fdisk -l given_file.img
+
+
+Linux partition starts at 137216 and the sector size is 512 bytes. 
+If we multiply together we can get the physical offset in the file 
+of our OS file system. 
+137216 * 512 = 70254592
+
+# mkdir given_file_mount
+
+# mount -o loop,offset=70254592 given_file.img given_file_mount 
+
+========================
+
