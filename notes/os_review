@@ -165,6 +165,58 @@ and start trying to execute
  BIOS =====> First-Stage Bootloader (460 bytes) last two bytes: 0x55 0xAA (i.e. 0xAA55) 
  
  
+ Disk Formatting
+ ===============
+ Disk = Any Storage Medium
+ Store data = Write to disk
+ Retrieve Data = Read from disk,
+                 + interpret data
+                 + prevent corruption
+                 
+ 
+ -------\          /---------
+         \        /
+           \     /
+            \   /
+             \ /
+ 
+ The above mechanism is provided by file system.
+ 
+ More than one filesystem can be stored in a single disk. There are many reasons we may want to do. 
+ For example, we may want to store two separate operating systems. we may want to split disk into encrypted part 
+ and a non-encrypted part. 
+ Partitions
+ ----------
+ - large section of disk
+ - Disk partitions contain a single file system information where our partition starts and ends stored in 
+ something called a partition table. There are two standards for partition table 1. MBR 2. GPT 
+ 
+ MBR: allows only four partitions, out of four, one is mounted as bootable partition.
+ GPT: allows more partitions.
+ 
+ So, our first stage bootloader can read the MBR partition table and find the parititon which is bootable it can read 
+ file system from that partition and load the second stage bootloader. 
+ 
+ Second-Stage Bootloader
+ -----------------------
+ - Almost any size
+ - it's just a file in the file system
+ - Loaded from the file system
+ - Much more sophisticated 
+ (though may still make use of BIOS calls)
+ - Display additional boot options
+ - Determines hardware state
+ - Pre-configuration for the OS
+ - One-way communication standard necessary (Bootloader to OS)
+ 
+ Multiboot
+ ---------
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
