@@ -16,3 +16,8 @@ Step 1:View the I-node usage using following commands:
   
   
 Btffs, XFS do not have this limitation. And ZFS doesn't use I-node.  
+=====
+1. Find I-node count for your accout.
+
+$ find . | wc -l
+
