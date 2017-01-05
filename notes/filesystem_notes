@@ -21,3 +21,5 @@ Btffs, XFS do not have this limitation. And ZFS doesn't use I-node.
 
 $ find . | wc -l
 
+
+
