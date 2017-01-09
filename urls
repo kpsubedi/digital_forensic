@@ -1,5 +1,9 @@
-Important Resources
+Operating System
+================
+http://pages.cs.wisc.edu/~remzi/OSTEP/
 
+Important Resources
+===================
 https://digital-forensics.sans.org/blog/2010/09/16/tool-digital-forensics-tool/
 http://www.sleuthkit.org/sleuthkit/docs/api-docs/4.3/fspage.html
 http://phrack.org/issues/63/12.html
@@ -15,7 +19,7 @@ https://raid.wiki.kernel.org/index.php/RAID_setup
 https://github.com/libyal/libewf
 
 Challanges
-
+==========
 https://www.amanhardikar.com/mindmaps/ForensicChallenges.html
 http://lxr.free-electrons.com/source/arch/x86/syscalls/syscall_64.tbl?v=3.14
 https://articles.forensicfocus.com/2014/04/28/windows-logon-password-get-windows-logon-password-using-wdigest-in-memory-dump/
