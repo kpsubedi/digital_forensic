@@ -338,3 +338,57 @@ of our OS file system.
 
 ========================
 
+
+WINDOWS FileSystem
+==================
+C:\Users\Administrator> fsutil 
+------- Commands Supported ----
+
+8dot3name
+behavior 
+dirty
+file
+fsinfo
+hardlink
+objectid
+quota
+repair
+reparsepoint
+resource
+sparse
+tiering
+transcation
+usn
+volume
+
+Usage: fsutil behavior query <option>
+
+<option>
+AllowExtChar
+BugcheckOnCorrupt
+Disable8dot3  [<Volume Path>]
+DisableCompression
+DisableCompressionLimit
+DisableDeleteNotify
+DisableEncryption
+DisableLastAccess
+DisableSpotCorrptionHandling
+EncryptPagingFile
+MemoryUsage
+MftZone
+QuotaNotify
+SymlinkEvaluation
+
+
+
+Usage: fsutil fsinfo ntfsInfo <Volume Pathname>
+Eg: fsutil fsinfo ntfsInfo C:
+
+
+
+Creating a Hard Link
+--------------------
+C:\Users\joe> echo hello > test.txt
+> mklink hard.txt test.txt /H
+
+
