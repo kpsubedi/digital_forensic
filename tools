@@ -380,10 +380,22 @@ QuotaNotify
 SymlinkEvaluation
 
 
-
+Viewing NTFS Information
+========================
 Usage: fsutil fsinfo ntfsInfo <Volume Pathname>
 Eg: fsutil fsinfo ntfsInfo C:
 
+A file on NTFS volume is identified by 64-bit value called a file record number, 
+which consists of a file number and a sequence number. 
+File number: corresponds to the position of the file's file record in the MFT-1 or the 
+position of the base file record - 1 if the file has more than one file record. 
+This is 48-bit.
+Sequence number: incremented each time an MFT file record position is reused, enables 
+NTFS to perform internal consistency checks. 
+This is 16-bit.
+
+File Records
+------------
 
 
 Creating a Hard Link
