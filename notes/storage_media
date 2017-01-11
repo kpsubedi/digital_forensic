@@ -101,3 +101,11 @@ root@forensic-01:~# udevadm monitor
 
 
 
+Storage Management
+==================
+- defines the way that an OS interfaces with nonvolatile storage devices and media
+- term storage encompasses : optical media, USB flash drives, floppy disks, hard disks, solid state disks
+                              network storage iSCSI, SANs, 
+                              virtual storage VHDs (virtual hard disk)
+                                 
+
