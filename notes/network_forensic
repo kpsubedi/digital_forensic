@@ -19,6 +19,26 @@ Lecture1
       -- TCP Three-way connection 
       -- DNS (TCP is used when the response data size exceeds 512 bytes, or for tasks such as zone transfers)
       
+Basic Understanding
+===================
+
+$ nmap 192.168.1.20 -D 8.8.8.8 -ttl 30
+
+-D: Decoy scan, in above 8.8.8.8 as a decoy address. 
+-ttl: To hard cord a TTL of 30 
+
+The above command scan the address 192.168.1.20 with a decoy of 8.8.8.8, using a hard-coded TTL of 30.
+
+On target if we dump using tcpdump in verbose mode (-v) option. 
+target# tcpdump -i eth0 -v -nn 'host 8.8.8.8'
+
+Parsing TTL fields with Scapy
+=============================
+- print the source IP address and TTL of incoming packets
+- setup a function to sniff and pass each individual packet to the function testTTL(), which examines the packet 
+for the IP layer, extracting the IP source address and TTL fields and print these fields to the screen.
+
+ 
       
       
 Networking

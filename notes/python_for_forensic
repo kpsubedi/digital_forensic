@@ -95,17 +95,31 @@ except Exception as e:
 
 Accessing Windows Registry - Part 1
 ===================================
+Notes on struct
+
+
+
 
 import struct
 
 f = open("win-ntfs", "rb")
 
-bytearray = bytearray()
+byte_array = bytearray()
 
 try:
-    bytearray = f.read(512)
+    byte_array = f.read(512)
 finally:
     f.close()
+
+bytes_per_sector = struct.unpack("<h", byte_array[0x00b:0x00D])
+print(bytes_per_sector)
+
+sectors_per_cluster = byte_array[0x00D]
+print(sectors_per_cluster)
+
+cluster_size = bytes_per_sector[0] * int(sectors_per_cluster)
+print(cluster_size)
+
 
 
 
