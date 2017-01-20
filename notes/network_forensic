@@ -21,6 +21,74 @@ Lecture1
       
       
       
+Networking
+==========
+
+Network Byte Order
+------------------
+
+
+Name Server Lookups
+-------------------
+
+
+Network Client
+--------------      
       
-      
-      
+
+
+Network Server
+--------------
+
+
+Grabbing Banners
+----------------
+
+
+Simple HTTP Request
+-------------------
+
+
+Capturing Packets
+-----------------
+
+
+
+Reading Headers
+---------------
+
+
+
+Parsing PCAP Files
+------------------
+
+
+Creating RAW Packets With Scapy
+-------------------------------
+
+Communicating With SSL
+----------------------
+
+
+Talking To SMTP Servers
+-----------------------
+
+
+Talking to POP3 and IMAP Servers
+--------------------------------
+
+
+FTP
+---
+
+
+
+Multicasting
+------------
+
+
+UDP
+---
+
+Telnet Client
+-------------      
