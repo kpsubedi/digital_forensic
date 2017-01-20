@@ -26,6 +26,8 @@ Networking
 
 Network Byte Order
 ------------------
+Bigest byte first 
+E.g., 1234 
 
 
 Name Server Lookups

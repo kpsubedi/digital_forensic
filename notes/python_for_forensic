@@ -63,10 +63,50 @@ https://docs.python.org/3.6/library/stdtypes.html
 
 Accessing Windows Registry - Part 1
 ===================================
+Example1
+--------
+
+import _winreg
+
+try:
+    keyName = "forensicKey"
+    key = _winreg.CreateKey(_winreg.HKEY_CURRENT_USER, "Software\\" + keyName)
+    # key is folder. this is handle to write registry
+    _winreg.SetValueEx(key, "myValue", 0, _winreg.REG_SZ, "Welcome to the file system forensic");
+    # there are different data types available for REG_SZ
+except Exception as e:
+    print(e)
+
+Lets verify we created a value and put there.
+
+import _winreg
+
+keyName = "forensicKey"
+
+try:
+    with _winreg.OpenKen(_winreg.HKEY_CURRENT_USER, "Software\\", keyName, 0, _winreg.KEY_READ) as key:
+        if key:
+	    data = _winreg.QueryValueEx(key, "myValue")
+	    print(data)
+except Exception as e:
+    print(e)
+
 
 
 Accessing Windows Registry - Part 1
 ===================================
+
+import struct
+
+f = open("win-ntfs", "rb")
+
+bytearray = bytearray()
+
+try:
+    bytearray = f.read(512)
+finally:
+    f.close()
+
 
 
 Accessing MTF - Part 1
