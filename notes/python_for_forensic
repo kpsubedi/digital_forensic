@@ -120,6 +120,22 @@ print(sectors_per_cluster)
 cluster_size = bytes_per_sector[0] * int(sectors_per_cluster)
 print(cluster_size)
 
+# sectors in volume
+sectors = struct.unpack("<Q", byte_array[0x028:0x030])
+print(sectors)
+
+# Quad Word for the first cluster
+
+mft_loc = struct.unpack("<Q", byte_array[0x030:0x038])
+print(mft_loc) 
+
+mft_mirror_loc = struct.unpack("<Q", byte_array[0x038:0x040])
+print(mft_mirror_loc)
+
+# calculate the first MFT sector location in bytes
+
+first_mft_sector = mft_mirror_loc[0] * clustersize
+print(first_mft_sector)
 
 
 
