@@ -199,3 +199,6 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Sign
     DefaultGatewayMac    REG_BINARY    0000CA112233
 
 
+- REG_BINARY as a MAC Address
+
+
