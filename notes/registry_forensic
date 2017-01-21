@@ -2,3 +2,200 @@
 Need to run by system user:
 
 C:\WINDOWS\system32>reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged" /s
+
+Output:
+=======
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0000800000F0000F034F54737AB17995F40E037E9142D80F79FAF69797F557758D3D2B760C0EB38DE
+    ProfileGuid    REG_SZ    {C50AD47C-50EF-4B4F-B97F-7FA4115E20F0}
+    Description    REG_SZ    DESKTOP-J8C6QBI 6534
+    Source    REG_DWORD    0x800
+    DnsSuffix    REG_SZ    <none>
+    FirstNetwork    REG_SZ    DESKTOP-J8C6QBI 6534
+    DefaultGatewayMac    REG_BINARY    
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0000800000F0000F07E6E6A506A79D9A28F1A56BA95DD4EB877875D9ECCCDC902DE9809A7676F2419
+    ProfileGuid    REG_SZ    {A9CC27F4-EE8F-4507-83D1-FCD08D2C8D55}
+    Description    REG_SZ    paraspnd
+    Source    REG_DWORD    0x800
+    DnsSuffix    REG_SZ    <none>
+    FirstNetwork    REG_SZ    paraspnd
+    DefaultGatewayMac    REG_BINARY    
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0000800000F0000F0F0DC4BF7A05959E732E28557F40331097B7A81CDF317737D72A50D521F706534
+    ProfileGuid    REG_SZ    {A7A9D0B2-8CB6-4DC3-B682-82130CE0B5B5}
+    Description    REG_SZ    DIRECT-ULDESKTOP-J8C6QBI0201
+    Source    REG_DWORD    0x800
+    DnsSuffix    REG_SZ    <none>
+    FirstNetwork    REG_SZ    DIRECT-ULDESKTOP-J8C6QBI0201
+    DefaultGatewayMac    REG_BINARY    
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0080000000F0000F01B6FE2F3734B3E28D75E5C7EFE4D6108B304761A1E44B6FC3C21F5FDF742A8AF
+    ProfileGuid    REG_SZ    {8E987C7D-F091-49A5-AB15-580D538A4CDA}
+    Description    REG_SZ    Kathmandu
+    Source    REG_DWORD    0x8
+    DnsSuffix    REG_SZ    hitronhub.home
+    FirstNetwork    REG_SZ    Kathmandu
+    DefaultGatewayMac    REG_BINARY    BC4DFB78EA52
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0080000000F0000F02C84C20411D272D5E7D30CBC0C40A5F7262C940470897B1A1D6475657F4EFA34
+    ProfileGuid    REG_SZ    {196467AA-3B84-4F00-8524-649EB40B3E0C}
+    Description    REG_SZ    Mua
+    Source    REG_DWORD    0x8
+    DnsSuffix    REG_SZ    hsd1.tx.comcast.net.
+    FirstNetwork    REG_SZ    Mua
+    DefaultGatewayMac    REG_BINARY    0000CA112233
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0080000000F0000F03799BD52BC82A8313564615CEF7D159267DA8C075B2D21133C37B22C50DBE248
+    ProfileGuid    REG_SZ    {8AB79A3F-3741-496B-A428-FB27B79B7057}
+    Description    REG_SZ    ATT9w5a5w3  2
+    Source    REG_DWORD    0x8
+    DnsSuffix    REG_SZ    <none>
+    FirstNetwork    REG_SZ    ATT9w5a5w3  2
+    DefaultGatewayMac    REG_BINARY    C4E9843574CA
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0080000000F0000F037A9DFC5715E6ED5AAD8F7A6D604B60F42C7B33744255D7A1F75577FD1252EDA
+    ProfileGuid    REG_SZ    {CB8339FB-1806-453D-9D08-787AFDC8E5B9}
+    Description    REG_SZ    uofm-guest
+    Source    REG_DWORD    0x8
+    DnsSuffix    REG_SZ    cogentco.com
+    FirstNetwork    REG_SZ    uofm-guest
+    DefaultGatewayMac    REG_BINARY    000D29F2B240
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0080000000F0000F047E8255C935703F8C95CE605AB7F7E4D0D015C0AADA4C249B8F6805D0567DA0D
+    ProfileGuid    REG_SZ    {722F9E52-1CDA-4FF3-A489-1AAE8AAD41D1}
+    Description    REG_SZ    belkin.164
+    Source    REG_DWORD    0x8
+    DnsSuffix    REG_SZ    Belkin
+    FirstNetwork    REG_SZ    belkin.164
+    DefaultGatewayMac    REG_BINARY    94103EF9B164
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0080000000F0000F05C126D6F29D07B9D24743E9DCAD7DF2A7663D64C1BD26930751167385DD532C9
+    ProfileGuid    REG_SZ    {F20F3BAC-7250-4A14-AD12-F8D2884FDB5C}
+    Description    REG_SZ    Sigma Chi Guests
+    Source    REG_DWORD    0x8
+    DnsSuffix    REG_SZ    lan
+    FirstNetwork    REG_SZ    Sigma Chi Guests
+    DefaultGatewayMac    REG_BINARY    AC867423E6A2
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0080000000F0000F07470F9B8E7768AED6B9A385C7156FBD7E2ECDBA230D7662E0759789B014FEEBC
+    ProfileGuid    REG_SZ    {FA7BAADA-7409-4915-A5BF-A4A73FF9CFFD}
+    Description    REG_SZ    Samsung Galaxy S6 edge 6346
+    Source    REG_DWORD    0x8
+    DnsSuffix    REG_SZ    <none>
+    FirstNetwork    REG_SZ    Samsung Galaxy S6 edge 6346
+    DefaultGatewayMac    REG_BINARY    E8508B9D5E26
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0080000000F0000F09A851E39DC5BAAECE23D256D0DE71455A7253E53CDC888FBBFD8FE1571980B82
+    ProfileGuid    REG_SZ    {A3252155-4382-481A-9FF8-560F291E01F2}
+    Description    REG_SZ    SUSHANTSINGH
+    Source    REG_DWORD    0x8
+    DnsSuffix    REG_SZ    cinci.rr.com
+    FirstNetwork    REG_SZ    SUSHANTSINGH
+    DefaultGatewayMac    REG_BINARY    0000CA000003
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0080000000F0000F0B772C65C860DE0303FB28DC3221FF764F8A4B8229FF6AE1DE3E2ACC848661893
+    ProfileGuid    REG_SZ    {D3556876-C321-475E-A683-C8AB533BB80D}
+    Description    REG_SZ    charter wifi
+    Source    REG_DWORD    0x8
+    DnsSuffix    REG_SZ    <none>
+    FirstNetwork    REG_SZ    charter wifi
+    DefaultGatewayMac    REG_BINARY    48F8B324FF5B
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0080000000F0000F0BFE0C0B5695C633F0084BCA52096653E1E8BDC09981AE4F5F414A0C422F017B1
+    ProfileGuid    REG_SZ    {FF7077A2-6B3E-46D2-9D78-CE3845F21C78}
+    Description    REG_SZ    ATT264
+    Source    REG_DWORD    0x8
+    DnsSuffix    REG_SZ    att.net
+    FirstNetwork    REG_SZ    ATT264
+    DefaultGatewayMac    REG_BINARY    7CBFB1ED6680
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0080000000F0000F0C3ECE61BF55A6E20F164673580BE695B820558D31E23331D3F3FDFBD8346783A
+    ProfileGuid    REG_SZ    {8E92927C-AA34-4B8B-9B2E-9555C33FB58A}
+    Description    REG_SZ    TP-LINK_Extender_2.4GHz
+    Source    REG_DWORD    0x8
+    DnsSuffix    REG_SZ    <none>
+    FirstNetwork    REG_SZ    TP-LINK_Extender_2.4GHz
+    DefaultGatewayMac    REG_BINARY    EC086B70B1AC
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0080000000F0000F0CEF2948A890C904F351BD3F62B8B7E49401BDE154303D33FB79A7ACA675D1C3F
+    ProfileGuid    REG_SZ    {96D67FD5-BF3A-4ABE-A52E-DE32D9395F7A}
+    Description    REG_SZ    uofm
+    Source    REG_DWORD    0x8
+    DnsSuffix    REG_SZ    memphis.edu
+    FirstNetwork    REG_SZ    uofm
+    DefaultGatewayMac    REG_BINARY    00000C07ACCD
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0080000000F0000F0E0E8555442EC06B28BCA43DEAD12A1CFEBF8E48AF55885B9A47A5A11E43EE317
+    ProfileGuid    REG_SZ    {E822C2FD-9248-4C73-8CBD-61B5B4C586A7}
+    Description    REG_SZ    Mt.Everest
+    Source    REG_DWORD    0x8
+    DnsSuffix    REG_SZ    att.net
+    FirstNetwork    REG_SZ    Mt.Everest
+    DefaultGatewayMac    REG_BINARY    3C36E449D350
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0080000000F0000F0E5B3B6B5FA50A9EEA66CE72B446E13BDFBA64607F77D3338560F49B2C5E7E314
+    ProfileGuid    REG_SZ    {68821049-578E-4D7F-AEE3-0B138862E4FC}
+    Description    REG_SZ    ATT9w5a5w3
+    Source    REG_DWORD    0x8
+    DnsSuffix    REG_SZ    attlocal.net
+    FirstNetwork    REG_SZ    ATT9w5a5w3
+    DefaultGatewayMac    REG_BINARY    44E137BD5180
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0080000000F0000F0E882E160FDBAAE65F5EE57A3598D1BC2077BEB47B30724C78990D031D0B6F0EA
+    ProfileGuid    REG_SZ    {CE364F25-98FA-4D74-B049-AD701785C00C}
+    Description    REG_SZ    ATT2qBp95S
+    Source    REG_DWORD    0x8
+    DnsSuffix    REG_SZ    <none>
+    FirstNetwork    REG_SZ    ATT2qBp95S
+    DefaultGatewayMac    REG_BINARY    14EDBB0CA5A9
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0080000000F0000F0F2FEF9B2BCC7D5B2DE5F93525F8BCE1287BCA2686744AB9A3F0AF10B94A55EB6
+    ProfileGuid    REG_SZ    {208A9B63-7182-41DC-AB1C-7EF6E9DD9AED}
+    Description    REG_SZ    ARRIS-7782-5G
+    Source    REG_DWORD    0x8
+    DnsSuffix    REG_SZ    <none>
+    FirstNetwork    REG_SZ    ARRIS-7782-5G
+    DefaultGatewayMac    REG_BINARY    3C7A8AEF7787
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0080000000F0000F0F30F2098622413C4FECF661D0BC08A9C9D08DECC9F04AF61FBEA439C6FBBBBB6
+    ProfileGuid    REG_SZ    {4121F208-78FD-4EB7-B60F-F3B6EAE306F5}
+    Description    REG_SZ    Network
+    Source    REG_DWORD    0x8
+    DnsSuffix    REG_SZ    memphis.edu
+    FirstNetwork    REG_SZ    Network
+    DefaultGatewayMac    REG_BINARY    00000C07AC00
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0080000000F0000F0F60CFA07A012F313AC4F0A25AFFEA5F022539C203B5569E88A1E2C357434EAEB
+    ProfileGuid    REG_SZ    {A553905F-C9F0-4DB1-B2AA-991EC2240F58}
+    Description    REG_SZ    xfinitywifi
+    Source    REG_DWORD    0x8
+    DnsSuffix    REG_SZ    <none>
+    FirstNetwork    REG_SZ    xfinitywifi
+    DefaultGatewayMac    REG_BINARY    000000020202
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0080400000F0000F060B514CD56482FFEDCDA40E1B27CB8E893BDC5F291B31B727BFE29F0F6606AE2
+    ProfileGuid    REG_SZ    {90FD6676-AA2E-4FE7-8C20-9CD988310173}
+    Description    REG_SZ    TP-LINK_74CA
+    Source    REG_DWORD    0x408
+    DnsSuffix    REG_SZ    <none>
+    FirstNetwork    REG_SZ    TP-LINK_74CA
+    DefaultGatewayMac    REG_BINARY    C4E9843574CA
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0080400000F0000F0A2AC4EEFA0F198149704AA8007B040244A7518112D5A8964355EC6A0C3021C0E
+    ProfileGuid    REG_SZ    {FD4AD2B2-A84C-41A6-98CA-4357162AB971}
+    Description    REG_SZ    uofm-guest  2
+    Source    REG_DWORD    0x408
+    DnsSuffix    REG_SZ    attlocal.net
+    FirstNetwork    REG_SZ    uofm-guest  2
+    DefaultGatewayMac    REG_BINARY    44E137BD5180
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged\010103000F0000F0080400000F0000F0AB901E0FB7DB1F6FA8FF5E2270C8D38AA9198349DD06D617222AAE1DBC1D4C91
+    ProfileGuid    REG_SZ    {7C70BC0E-13E5-41D7-B299-18F962DFA846}
+    Description    REG_SZ    HOME-EFC2
+    Source    REG_DWORD    0x408
+    DnsSuffix    REG_SZ    hsd1.tn.comcast.net.
+    FirstNetwork    REG_SZ    HOME-EFC2
+    DefaultGatewayMac    REG_BINARY    0000CA112233
+
+
