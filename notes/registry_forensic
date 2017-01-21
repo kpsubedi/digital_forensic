@@ -1,0 +1,4 @@
+
+Need to run by system user:
+
+C:\WINDOWS\system32>reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged" /s
