@@ -31,3 +31,18 @@ for d in `find -maxdepth 1 -type d |cut -d\/ -f2 |grep -xv . |sort`;
 
 printf "Total: \t\t$(find $(pwd) | wc -l)\n"
 
+
+Mapping Files into Memory
+=========================
+Kernel provides an interface that allows an application to map a file into memory, meaning that there is a one-to-one
+correspondence between a memory address and a word in the file.
+The programmer can then access the file directly through memory, identically to any other chunk of memory-resident data
+- it is even possible to allow writes to the memory region to transparently map back to the file on disk.
+
+POSIX.1 standards and Linux implements -- the mmap() system call for mapping objects into memory. 
+mmap() pertains to mapping files into memory to perform I/O.
+
+mmap()
+------
+A call to mmap() asks the kernel to map <len> bytes of the object represented by the file descriptor <fd>, 
+starting at <offset> bytes into the file, into memory. 
