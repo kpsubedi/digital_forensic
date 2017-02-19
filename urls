@@ -7,7 +7,7 @@ Important Resources
 https://digital-forensics.sans.org/blog/2010/09/16/tool-digital-forensics-tool/
 http://www.sleuthkit.org/sleuthkit/docs/api-docs/4.3/fspage.html
 http://phrack.org/issues/63/12.html
-
+https://staff.washington.edu/dittrich/home/
 https://github.com/prakhar1989/awesome-courses
 http://angrave.github.io/sys/#
 http://www.ghettoforensics.com/2016/05/grrcon-2015-memory-forensics-grabbing.html#more
@@ -28,3 +28,7 @@ https://github.com/ctfs/write-ups-2015/tree/master/cyber-security-challenge-2015
 
 https://www.codilime.com/about/
 http://linux.sys-con.com/node/117909/
+
+[NTFS]
+Alternate Data Stream (ADS)
+https://www.irongeek.com/i.php?page=security/altds
