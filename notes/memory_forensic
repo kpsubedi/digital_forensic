@@ -117,3 +117,47 @@ The most common types are PT_LOAD, which describes a segment that must load into
 PT_DYNAMIC, which describes the dynamic linking information;
 PT_INTERP, which holds the full path to the program interpreter. 
 
+
+
+
+Chapter 7
+=========
+
+Most common initial steps in an investigation:
+----------------------------------------------
+1. Determining what applications are running
+2. What they are doing (in terms of access to files, registry keys, and so on)
+3. What security context (or privilege level) they have obtained
+
+Learn
+-----
+How to detect hidden processes?
+How to link process to specific user accounts?
+How to investigate lateral movement across networks?
+How to analyze privilege escalation attacks?
+
+Processes
+---------
+
+>>> dt("_EPROCESS")
+
+Basic resources that belong to a process:
+- "_EPROCESS" name of the structure that Windows uses to represent a process. 
+- They all have one or more threads that execute code
+- They all have a table of handles (or file descriptors) to kernel objects such as files, 
+   network sockets, and mutexes.
+- Each process has its own private virtual memory space that's isolated from other processes.
+Inside this memory space, you can find the process executables; its list of loaded modules (DLLs or shared libraries)
+and its stack, heaps, and allocated memory regions containing from user input to application-specific data
+structures (such as SQL tables, Internet history blogs, and configuration files).
+- Windows organizes the memory regions using virtual address descriptors (VADs)
+
+
+Enumerating Processes in Memory
+===============================
+
+
+Chapter 8
+=========
+Hunting Malware in Process Memory:
+----------------------------------
