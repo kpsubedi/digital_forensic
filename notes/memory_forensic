@@ -55,3 +55,43 @@ reference during analysis and event reconstruction
 
 
 
+Linux OS
+========
+ELF Files:
+- main executable file format used on Linux systems
+- User applications, shared libraries, kernel modules, and the kernel itself are all stored in the ELF format
+- To explore the ELF format, we will discuss its data structures and on-disk layout with the help of 
+  the <readelf> command.
+- <readelf> is distributed with <binutils> and should be installed by default on all Linux distrubutions.
+- http://www.skyfree.org/linux/references/ELF_Format.pdf
+
+
+ELF Header
+----------
+- located at the very beginning (offset 0) of a file. 
+- represented by <Elf32_Ehdr> or <Elf64_Ehdr> data structure for 32-bit or 64-bit files, respectively
+- the following structure members are important for analysis:
+   1. e_ident: Holds the file identification information. The first four bytes are "\x7fELF", the fifth 
+       byte stores whether the file is 32- or 64-bit, and the sixth stores whether the file is in 
+       little or bif endian format. You can use this signature to scan thorugh memory dumps and 
+       find the beginning of ELF files mapped into RAM
+   2. e_type: Tells the file type - whether it is an executable, relocatable image, shared library, or a core dump.
+   3. e_entry: Holds the program entry point, which is the address of the first instruction that executes 
+       when the program is run
+   4. e_phoff, e_phentsize, and e_phnum: Holds the file offset, entry size, and number of program header entries.
+   5. e_shoff, e_shentsize, and e_shnum: Holds the file offset, entry size, and number of section header entries.
+   6. e_shstrndx: Stores the index within the section header table of the strings that map to section names.
+   
+   
+   $ readelf -h /bin/ls
+   
+   
+Sections
+------------
+
+An ELF binary is typically divided into multiple sections.
+
+The <e_shoff> member of the ELF header tells you where the section header entries begin. 
+At this offset is an array of <Elf32_Shdr> or <Elf64_Shdr> structures that represent each section within the file. 
+
+$ readelf -S /bin/ls
