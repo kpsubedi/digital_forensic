@@ -95,3 +95,25 @@ The <e_shoff> member of the ELF header tells you where the section header entrie
 At this offset is an array of <Elf32_Shdr> or <Elf64_Shdr> structures that represent each section within the file. 
 
 $ readelf -S /bin/ls
+
+Packer for Binary File
+-----------------------
+https://github.com/upx/upx
+
+
+Program Headers
+-------------
+
+e_phoff: member of the ELF header tells you where the program header entries begin.
+At this offset is an <Elf32_Phdr> or <Elf64_Phdr> structure. The operating system uses program headers to map the file 
+and its sections into the memory at runtime. 
+
+When encountering malicious executables, the program header is often the only information available to the analyst 
+to statically analyze the binary. The imporant members of this sections are:
+
+p_type: Describes the type of the segment. Segments are portions of the file that load into memory, and
+they contain one or more sections of the file. 
+The most common types are PT_LOAD, which describes a segment that must load into memory;
+PT_DYNAMIC, which describes the dynamic linking information;
+PT_INTERP, which holds the full path to the program interpreter. 
+
