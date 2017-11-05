@@ -1,0 +1,10 @@
+What can Forensics Do?
+=====================
+- Recover deleted files
+- Determine system has malicious files / launched an attack
+- Investigate footprint attack
+- Track malware signature
+- Determine time, place, and device for an event
+- Track physical locations and websites used
+- Crack passwords
+
