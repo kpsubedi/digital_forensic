@@ -209,3 +209,11 @@ def regbin_to_mac(val):
         addr += ("%02x " % ord(ch))
     addr = addr.strip(" ").replace(" ", ":")[0:17]
     return addr
+
+
+==============
+sc 
+: SC is a command line program used for communicating with the Service Control Manager and services.
+
+
+sc query WinDivert1.1
