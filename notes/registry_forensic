@@ -203,6 +203,9 @@ The registry stores the gateway MAC address as a REG_BINARY type.
 In the previous example, the hex bytes \x00\x00\xCA\x11\x22\x33 refer to the 
 actual address 00:00:CA:11:22:33.
 
-def regbin_to_macadd(val):
-
-
+def regbin_to_mac(val):
+    addr = ""
+    for ch in val:
+        addr += ("%02x " % ord(ch))
+    addr = addr.strip(" ").replace(" ", ":")[0:17]
+    return addr
