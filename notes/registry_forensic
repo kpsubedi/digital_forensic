@@ -198,7 +198,11 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Sign
     FirstNetwork    REG_SZ    HOME-EFC2
     DefaultGatewayMac    REG_BINARY    0000CA112233
 
+======================================================
+The registry stores the gateway MAC address as a REG_BINARY type. 
+In the previous example, the hex bytes \x00\x00\xCA\x11\x22\x33 refer to the 
+actual address 00:00:CA:11:22:33.
 
-- REG_BINARY as a MAC Address
+def regbin_to_macadd(val):
 
 
