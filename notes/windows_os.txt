@@ -1,1 +1,6 @@
 [The Boot Process]
+In very general terms, the Windows boot process begins with the boot manager being loaded into memory and executed. 
+However, the exact nature of this sequence of events depends upon the type of firmware installed on the motherboard:
+1. Is it a tried-and-true PC basic input/output system (BIOS)?
+2. or is it one of these new-fangled extensible firmware interface (EFI) deals? 
+
