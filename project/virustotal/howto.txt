@@ -12,4 +12,27 @@ After signup and go to https://www.virustotal.com/gui/settings. Click on the Use
 This is the official Python client library for VirusTotal.
 https://github.com/VirusTotal/vt-py/tree/master
 
+[Example]
 
+import requests
+import urllib3
+
+
+#url = "https://www.virustotal.com/api/v3/files"
+url = "https://www.virustotal.com/vtapi/v2/file/report"
+urllib3.disable_warnings(category=urllib3.exceptions.InsecureRequestWarning)
+
+params = {'apikey':'[API_KEY]',
+          'resource':'93ed68c7e5096d936115854954135d110648e739'
+          }
+
+headers = {
+    "Accept-Encoding": "gzip, deflate",
+    "User-Agent": "f0f726e6045630365d5046d9ffddc5c103e7c6e748d075927d7743072f76a4b4"
+}
+
+response = requests.get(url, params=params, headers=headers, verify=False)
+
+print(response.text)
+
+$python3 sample1.py | python3 -m json.tool
