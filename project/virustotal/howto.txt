@@ -3,3 +3,9 @@ you will find your personal API key in your personal settings section.
 This key is all you need to use the VirusTotal API.
 
 https://www.virustotal.com/gui/join-us
+
+[vt-py]
+This is the official Python client library for VirusTotal.
+https://github.com/VirusTotal/vt-py/tree/master
+
+
