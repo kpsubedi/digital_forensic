@@ -30,3 +30,6 @@ PS C:\>Get-SecurityEvent
 
 3. Reading exisiting event log file 
 PS C:\> Get-WinEvent -Path 'C:\Test\testLog.evtx'
+
+4. Count Line, Word, Charater 
+PS C:\> dir C:\Windows\System32\winevt\Logs | Measure-Object -Line
