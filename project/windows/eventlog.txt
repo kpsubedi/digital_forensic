@@ -1,5 +1,5 @@
 [Windows Events]
-- By default Windows events are generated and stored locally at C:\Windows\System32\winevt\Logs
+- By default Windows is configured events are generated and stored locally at C:\Windows\System32\winevt\Logs
 
 - single resource to find what happened 
 - os and application generate events
@@ -18,3 +18,8 @@ Open PS with admin privilege
 PS C:\>Get-WinEvent -ListLog Application, Security, Setup, System
 
 PS C:\> Get-WinEvent -LogName Security | Select-Object -first 10
+
+
+Examples
+1. List all failed Logon event that occurred in a single day. 
+PS C:\>Get-SecurityEvent 
