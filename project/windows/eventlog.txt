@@ -21,5 +21,8 @@ PS C:\> Get-WinEvent -LogName Security | Select-Object -first 10
 
 
 Examples
+1. Collect all of logon event 
+
+PS C:\> Get-WinEvent -LogName 'Security' | Where-Object { $_.Id -eq "4624" } | Select-Object -Property TimeCreated, Message -first 10
 1. List all failed Logon event that occurred in a single day. 
 PS C:\>Get-SecurityEvent 
