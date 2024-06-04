@@ -1,0 +1,3 @@
+[Windows Event Log]
+- single resource to find what happened 
+- os and application generate events
