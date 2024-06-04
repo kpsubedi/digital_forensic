@@ -33,3 +33,9 @@ PS C:\> Get-WinEvent -Path 'C:\Test\testLog.evtx'
 
 4. Count Line, Word, Charater 
 PS C:\> dir C:\Windows\System32\winevt\Logs | Measure-Object -Line
+
+Measure-Object -Line 
+Measure-Object -Word
+Measure-Object -Character
+
+
