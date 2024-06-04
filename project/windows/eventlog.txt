@@ -1,3 +1,20 @@
-[Windows Event Log]
+[Windows Events]
+- By default Windows events are generated and stored locally at C:\Windows\System32\winevt\Logs
+
 - single resource to find what happened 
 - os and application generate events
+- Event Viewer 
+- Windows Logs
+  * Applicaiton 
+  * Security => Auth, security related activites
+  * Setup
+  * System => native OS behavior
+  * Forwarded Events => events sent to config repo
+
+- 
+[Powershell and Event Logs]
+Open PS with admin privilege
+
+PS C:\>Get-WinEvent -ListLog Application, Security, Setup, System
+
+PS C:\> Get-WinEvent -LogName Security | Select-Object -first 10
