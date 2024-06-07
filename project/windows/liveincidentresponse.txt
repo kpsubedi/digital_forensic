@@ -1,0 +1,28 @@
+[Live Incident Response: The Basic Process]
+
+[Volatile Data Collection]
+
+[[Native Windows Tools]]
+Host name: hostname.exe
+User ID: whoami.exe
+OS Version: Ver
+Time & Date: ((date /t) & (time /t))
+Boot time: systeminfo | find "Boot Time"
+NetBIOS cache: nbtstat -c
+NetBIOS sessions: nbtstat -S
+Open share files: net file (Admin right)
+Network cards: ipconfig /all
+Routing table: netstat -r -n
+ARP cache: arp -a
+DNS cache: ipconfig /displaydns
+Hosted services: tasklist /svc
+Device drivers: driverquery 
+
+[[Sysinternals]]
+Logged on users: psloggedon /accepteula
+Logged on sessions: Logonsessions -p /accepteula
+Process tree: pslist.exe /accepteula -t
+Loaded DLLs: Listdlls -r
+Auto-start tasks: autorunsc /accepteula -a
+
+[[NirSoft]]
