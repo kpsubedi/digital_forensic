@@ -1,3 +1,5 @@
+Interacting with ViruaTotal API using Python
+============================================
 In order to use the API you must sign up to VirusTotal Community. Once you have a valid VirusTotal Community account 
 you will find your personal API key in your personal settings section. 
 This key is all you need to use the VirusTotal API.
