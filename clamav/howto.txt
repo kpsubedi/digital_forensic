@@ -13,4 +13,19 @@ $ python3 sample.py
     raise SSLError(e, request=request)
 requests.exceptions.SSLError: HTTPSConnectionPool(host='clamav-ui.com', port=443): Max retries exceeded with url: /api/v1/auth (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1056)')))
 
+Fix the SSL error with verify = False in requests.get() method
+--------------------------------------------------------------
+import requests
+
+res = requests.get('https://clamav-ui.com/api/v1/auth', verify=False)
+
+print(res.text)
+---------------------
+bruce@workstation:~$ python3 sol_oneofus.py 
+/home/bruce/.local/lib/python3.7/site-packages/urllib3/connectionpool.py:1107: InsecureRequestWarning: Unverified HTTPS request is being made to host 'clamav-ui.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  InsecureRequestWarning,
+{"status":"success","data":{"token":"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3Mi4xNy4wLjU3IiwiaG9zdG5hbWUiOiJjbGFtYXYtdWkuY29tIiwiaWF0IjoxNzYxODU3NDk3LCJleHAiOjE3NjE4NjEwOTcsImlzcyI6IkNsYW1BViJ9.iWgXRDMbxc_0Z7tOZDyOxFn4DgpQ4IyWquWZWms0a_1xO46gMKaoQcA3egEIMwaSH9L5BD2kUNKhmstH3_BVoQ"}}
+----------------
+Still there is a warning
+Lets find out how to supress the warning as well.
 
