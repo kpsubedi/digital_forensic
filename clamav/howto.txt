@@ -54,6 +54,29 @@ Using Bash
 curl -k https://clamav-ui.com/api/v1/auth
 
 Option: -k: will supress the certificate validation.
+------------
+import requests
+import urllib3
 
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+res = requests.get('https://clamav-ui.com/api/v1/auth', verify=False)
+
+if res.status_code == 200:
+
+    #print(res.text)
+    auth_data = res.json()
+
+    #print(f"Token: {auth_data['data']['token']}")
+    user_jwt = auth_data['data']['token']
+    #print(user_jwt)
+
+    # Make a POST call to scan the file 
+    
+else:
+    print(f"Error: {response.status_code}")
+-------
+
+==== MAKE A POST CALL =====
 
 
