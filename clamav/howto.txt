@@ -157,3 +157,10 @@ else:
     print(f"Error fetching token: {res.status_code}")
     print(res.text)
 ================
+List files in the directory using Python
+----
+import os 
+
+for (root,dirs,files) in os.walk('/home/bruce/Desktop/suspicious-files'):
+    print(files)
+----------
