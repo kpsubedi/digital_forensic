@@ -1,0 +1,8 @@
+Make an API call
+----------------
+import requests
+
+res = requests.get('https://clamav-ui.com/api/v1/auth')
+
+print(res.text)
+----------
