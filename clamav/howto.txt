@@ -78,5 +78,39 @@ else:
 -------
 
 ==== MAKE A POST CALL =====
+import requests
+import urllib3
 
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+# Step 1: Get auth token
+res = requests.get('https://clamav-ui.com/api/v1/auth', verify=False)
+
+if res.status_code == 200:
+    auth_data = res.json()
+    user_jwt = auth_data['data']['token']
+    #print(f"Token: {user_jwt}")
+
+    # Step 2: Upload file to scan 
+    headers = {"Authorization": f"Bearer {user_jwt}"}
+
+    try:
+        with open("file1.exe", "rb") as f:
+            files = {"file": ("file1.exe", f, "application/octet-stream")}
+            resp = requests.post('https://clamav-ui.com/api/v1/scan',
+                headers=headers,
+                files=files,
+                verify=False
+            )
+        #print(f"Scan status: {resp.status_code}")
+        #print(resp.text)
+        scan_result = resp.json()
+        print(scan_result)
+    except Exception as e:
+        print(f"Error sending file via HTTP: {e}")
+
+else:
+    print(f"Error fetching token: {res.status_code}")
+    print(res.text)
+=============
 
