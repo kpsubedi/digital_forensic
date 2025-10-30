@@ -6,3 +6,11 @@ res = requests.get('https://clamav-ui.com/api/v1/auth')
 
 print(res.text)
 ----------
+Run the above script 
+$ python3 sample.py
+
+  File "/home/bruce/.local/lib/python3.7/site-packages/requests/adapters.py", line 517, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='clamav-ui.com', port=443): Max retries exceeded with url: /api/v1/auth (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1056)')))
+
+
