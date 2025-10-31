@@ -130,14 +130,22 @@ if res.status_code == 200:
     try:
         with open("file1.exe", "rb") as f:
             files = {"file": ("file1.exe", f, "application/octet-stream")}
-            print(files)
+            #print(files)
 
             resp = requests.post('https://clamav-ui.com/api/v1/scan',headers=headers,files=files,verify=False)
-            print(f"Scan status: {resp.status_code}")
-            print(resp.text)
+            #print(f"Scan status: {resp.status_code}")
+            #print(resp.text)
             scan_result = resp.json()
+            #print(scan_result['data']['files'][0]['infected'])
+            #print(scan_result['data']['files'])
+
+            if scan_result['data']['files'][0]['infected'] == False:
+                print(f"The MD5 of file is: {scan_result['data']['files'][0]['md5']}")
+            else:
+                pass
     except Exception as e:
-        print("Error sending the file via HTTP: {e}")
+        pass
+        #print("Error sending the file via HTTP: {e}")
     #if scan_result['data']['files'][0]['infected'] == False:
         #print(scan_result['data']['files'][0]['md5'])
     #print(scan_result['data']['infected'])
