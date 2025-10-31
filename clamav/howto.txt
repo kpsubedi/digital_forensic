@@ -208,6 +208,8 @@ for (root,dirs,files) in os.walk('/home/bruce/Desktop/suspicious-files'):
     print(files)
 ----------
 ====FINAL SOLUTION====
+# make sure to install requests module
+# pip3 install requests
 import requests
 import urllib3
 import os
