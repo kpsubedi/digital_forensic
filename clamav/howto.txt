@@ -152,6 +152,52 @@ if res.status_code == 200:
 else:
     print(f"Error fetching token: {res.status_code}")
     print(res.text)
+================
+import requests
+import urllib3
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+
+def scan_result(mal_file):
+    # Step 1: Get auth token
+    res = requests.get('https://clamav-ui.com/api/v1/auth', verify=False)
+
+    if res.status_code == 200:
+        auth_data = res.json()
+        user_jwt = auth_data['data']['token']
+        #print(f"Token: {user_jwt}")
+        # Step 2: Upload file
+        headers = {"Authorization": user_jwt}
+        #print(headers)
+        try:
+            with open(mal_file, "rb") as f:
+                files = {"file": (mal_file, f, "application/octet-stream")}
+                #print(files)
+
+                resp = requests.post('https://clamav-ui.com/api/v1/scan',headers=headers,files=files,verify=False)
+                #print(f"Scan status: {resp.status_code}")
+                #print(resp.text)
+                scan_result = resp.json()
+                #print(scan_result['data']['files'][0]['infected'])
+                #print(scan_result['data']['files'])
+
+                if scan_result['data']['files'][0]['infected'] == False:
+                    print(f"The MD5 of file is: {scan_result['data']['files'][0]['md5']}")
+                else:
+                    pass
+        except Exception as e:
+            pass
+        #print("Error sending the file via HTTP: {e}")
+    #if scan_result['data']['files'][0]['infected'] == False:
+        #print(scan_result['data']['files'][0]['md5'])
+    #print(scan_result['data']['infected'])
+    else:
+        print(f"Error fetching token: {res.status_code}")
+        print(res.text)
+
+
+scan_result('file1.exe')
 
 ================
 List files in the directory using Python
